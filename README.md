@@ -9,13 +9,13 @@ Informfully is an open-source reproducibility platform for content distribution 
 
 ## Overview
 
-Work in progres...
+This repository contains all the experiment configuration files to reproduce the findings of our papers and research.
+Please see the [Recommenders Repository](https://github.com/Informfully/Recommenders) for an overview of how to install the codebase to run the experiment workflows shared here.
 
-## Experiments
-
-| Experiment      | Description                           | Source                                                                                                    |
-|-----------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| RecSys '24      | ACM RecSys '24 Challenge              | [Link](https://github.com/Informfully/Experiments/tree/main/recommendation_results/recsys_challenge_2024) |
+| Experiment | Description | Repository | Paper |
+|-|-|-|-|
+| RecSys '24 | ACM RecSys '24 Challenge | [Files](https://github.com/Informfully/Experiments/tree/main/recommendation_results/recsys_challenge_2024) | [Paper](https://dl.acm.org/doi/abs/10.1145/3687151.3687155) |
+<!-- | TBD | TBD | Files | Paper | -->
 
 ## Citation
 
