@@ -11,14 +11,11 @@ Informfully is an open-source reproducibility platform for content distribution 
 
 Work in progres...
 
-<!--
-## Algorithms
+## Experiments
 
-| Experiment      | Description                           | Source    |
-|-----------------|---------------------------------------|-----------|
-| RecSys '24      | ACM RecSys '24 Challenge              | [1]       |
-
--->
+| Experiment      | Description                           | Source                                                                                                    |
+|-----------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| RecSys '24      | ACM RecSys '24 Challenge              | [Link](https://github.com/Informfully/Experiments/tree/main/recommendation_results/recsys_challenge_2024) |
 
 ## Citation
 
