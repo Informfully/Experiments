@@ -14,7 +14,8 @@ Please see the [Recommenders Repository](https://github.com/Informfully/Recommen
 
 | Experiment | Description | Repository | Paper |
 |-|-|-|-|
-| RecSys '24 | ACM RecSys '24 Challenge | [Files](https://github.com/Informfully/Experiments/tree/main/recommendation_results/recsys_challenge_2024) | [Paper](https://dl.acm.org/doi/abs/10.1145/3687151.3687155) |
+|Tutorial|Sample Files| [Files](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial) | N/A |
+| RecSys '24 | ACM RecSys '24 Challenge | [Files](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_challenge_2024) | [Paper](https://dl.acm.org/doi/abs/10.1145/3687151.3687155) |
 <!-- | TBD | TBD | Files | Paper | -->
 
 ## Citation
