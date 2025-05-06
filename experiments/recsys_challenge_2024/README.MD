@@ -1,4 +1,4 @@
-# RecSys '24 Challenge
+# ACM RecSys '24 Challenge
 
 These results are part of a RecSys'24 Challenge submission.
 As we are unable to redistribute any of the challenge datasets, please go and download the required datasets at: https://recsys.eb.dk/#dataset
