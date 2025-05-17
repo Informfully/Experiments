@@ -1,4 +1,4 @@
-# Informfully Recommenders Tutorial
+# Tutorial Workflow
 
 This tutorial covers the basic steps for using the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
 This is a short version of the tutorial found in the [Online Documentation](https://informfully.readthedocs.io/en/latest/tutorial.html).
