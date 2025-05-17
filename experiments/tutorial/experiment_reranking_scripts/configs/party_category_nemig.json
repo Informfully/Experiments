@@ -1,0 +1,28 @@
+[
+    {
+        "name": "GOV_ONLY",
+        "type": "only",
+        "keywords": ["Social Democratic Party of Germany", "Alliance '90/The Greens", "Free Democratic Party"]
+    },
+    {
+        "name": "OPP_ONLY",
+        "type": "only",
+        "keywords": ["Christian Democratic Union", "Christian Social Union of Bavaria","Alternative for Germany", "The Left", "South Schleswig Voters' Association"]
+    },
+    {
+        "name": "GOV_OPP_COMPOSITION",
+        "type": "composition",
+        "keywords": [["Social Democratic Party of Germany", "Alliance '90/The Greens", "Free Democratic Party"], [ "Christian Democratic Union", "Christian Social Union of Bavaria","Alternative for Germany", "The Left", "South Schleswig Voters' Association"]]
+    },
+    {
+        "name": "Independent_Foreign",
+        "type": "minority",
+        "keywords": ["Social Democratic Party of Germany", "Alliance '90/The Greens", "Free Democratic Party", 
+    "Christian Democratic Union", "Christian Social Union of Bavaria","Alternative for Germany", "The Left", "South Schleswig Voters' Association"]
+    },
+    {
+        "name": "NO_PARTY",
+        "type": "no_party",
+        "keywords": []
+    }
+]

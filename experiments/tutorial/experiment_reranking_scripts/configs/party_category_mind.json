@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Republican_ONLY",
+        "type": "only",
+        "keywords": ["Republican Party"]
+    },
+    {
+        "name": "Democratic_ONLY",
+        "type": "only",
+        "keywords": ["Democratic Party"]
+    },
+    {
+        "name": "DEP_REP_COMPOSITION",
+        "type": "composition",
+        "keywords": [["Republican Party"], ["Democratic Party"]]
+    },
+    {
+        "name": "MINORITY",
+        "type": "minority",
+        "keywords": ["Republican Party", "Democratic Party"]
+    },
+    {
+        "name": "NO_PARTY",
+        "type": "no_party",
+        "keywords": []
+    }
+]

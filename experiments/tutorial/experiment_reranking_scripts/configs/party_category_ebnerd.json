@@ -1,0 +1,42 @@
+[
+    {
+        "name": "GOV_ONLY",
+        "type": "only",
+        "keywords": ["Social Democrats", "Venstre", "Moderate Party", "Union Party", "Social Democratic Party",
+        "Inuit Ataqatigiit", "Naleraq"]
+    },
+    {
+        "name": "OPP_ONLY",
+        "type": "only",
+        "keywords": ["Denmark Democrats - Inger Støjberg", "Green Left", "Liberal Alliance",
+    "Conservative People's Party", "Conservative Party",
+    "Red–Green Alliance", "Danish People's Party",
+    "Danish Social Liberal Party",
+    "The Alternative"]
+    },
+    {
+        "name": "GOV_OPP_COMPOSITION",
+        "type": "composition",
+        "keywords": [["Social Democrats", "Venstre", "Moderate Party", "Union Party", "Social Democratic Party",
+        "Inuit Ataqatigiit", "Naleraq"], ["Denmark Democrats - Inger Støjberg", "Green Left", "Liberal Alliance",
+        "Conservative People's Party", "Conservative Party",
+        "Red–Green Alliance", "Danish People's Party",
+        "Danish Social Liberal Party",
+        "The Alternative"]]
+    },
+    {
+        "name": "Independent_Foreign",
+        "type": "minority",
+        "keywords": [ "Social Democrats", "Venstre", "Moderate Party", "Union Party", "Social Democratic Party",
+        "Inuit Ataqatigiit", "Naleraq", "Denmark Democrats - Inger Støjberg", "Green Left", "Liberal Alliance",
+    "Conservative People's Party", "Conservative Party",
+    "Red–Green Alliance", "Danish People's Party",
+    "Danish Social Liberal Party",
+    "The Alternative"]
+    },
+    {
+        "name": "NO_PARTY",
+        "type": "no_party",
+        "keywords": []
+    }
+]
