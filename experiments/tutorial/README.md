@@ -24,7 +24,7 @@ This repository is organized as follows:
 
 Please follow the steps outlined below.
 Steps 1-2 are mandatory to execute before running experiments.
-The models shown in Step 3 can be run independently of each other.
+The models shown in Step 3 can be run independently of each other (depending on what models and datasets you want to use).
 Step 4 is optional and can be skipped.
 
 ## Step 1 - Download and Setup
