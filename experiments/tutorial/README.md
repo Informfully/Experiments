@@ -20,7 +20,7 @@ This repository is organized as follows:
 * **experiment_scripts**: Code to initialize and run the recommender pipeline.s
 * **graph_preparation**: Code to create and augment the graphs required for random walks.
 * **neural_preparation**: Code to enrich merge and format the dataset for the neural baseline models.
-* **supplementary_material**: A copy of our paper an additional analysis done on the MIND dataset.
+* **PLD_EPD_preparation**: Code to prepare the data and run PLD and EPD algorithms.
 
 Please follow the steps outlined below.
 Steps 1-2 are mandatory to execute before running experiments.
