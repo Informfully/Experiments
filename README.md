@@ -9,8 +9,8 @@ Informfully is an open-source reproducibility platform for content distribution 
 
 ## Overview
 
-This repository contains all the experiment configuration files to reproduce the findings of our papers and research.
-Please see the [Recommenders Repository](https://github.com/Informfully/Recommenders) for an overview of how to install the codebase to run the experiment workflows shared here and follow the [Online Tutorial](https://github.com/Informfully/Experiments/blob/main/_tutorial/tutorial.md).
+This repository contains all the experiment configuration files to reproduce the findings of our papers and research that use the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
+For an overview of how to install the codebase and how to run the experiment workflows shared here, please follow the [Online Tutorial](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial).
 
 | Experiment | Description | Repository | Paper |
 |-|-|-|-|
