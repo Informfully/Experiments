@@ -33,10 +33,12 @@ But **DO NOT** download the original Cornac codebase, as running our code requir
 For a tutorial and installation instructions, we refer to the official repository (https://github.com/PreferredAI/cornac).
 Once installed, you can access Cornac as an external library.
 Meaning, you can focus on working exclusively with the files shared in this repository and run them from any folder.
-* Step 1-2: In this tutorial, we use the EB-NeRD dataset, but you can use any other dataset of the same format.
+* Step 1-2: In this tutorial, we use the EB-NeRD dataset, but you can use any other dataset of the same format.*
 Download the EB-NeRD dataset from the official website (https://recsys.eb.dk/index.html). 
 You need the following files: **ebnerd_small** (iter-item interactions) and **ebnerd_roberta_base** (article embeddings).
 Due to legal reasons, we cannot share the dataset as part of our codebase.
+
+(*) Datasets of the same format for which we provide additional examples are MIND (https://msnews.github.io) and NeMig (https://github.com/andreeaiana/nemig).
 
 ## Step 2 - Data Pre-processing
 Please find the relevant files for this step in the folder: **article_enrichment_scripts**
