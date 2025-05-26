@@ -79,17 +79,17 @@ The following two combination steps exist:
    * b) For users only appear in the validation set: Use the history info from **history.parquet**.
    (The validation history can be used for training purposes, as the prediction task is tone on the impressions only, and not on any history.)
 
-* Step 3A-2 (**neural_preparation/generate_uir_test_impression.py** and **neural_preparation/generate_uir_test_impression.py**): Read the impression logs from the EB-NeRD behavior file and convert it to the Cornac internal UxIxR matrix (using a separate CSV file for training and validation set).
+* Step 3A-2 (**neural_preparation/generate_uir_test_impression.py** and **neural_preparation/generate_uir_test_impression.py**): Read the impression logs from the EB-NeRD behavior file and convert it to the Cornac internal user-item interaction matrix (using a separate CSV file for training and validation set).
 In doing so, we also remove any users with an empty history.
-Finally, as Cornac requires a UxIxR matrix, it only accepts one entry for any user-item pair.
+Finally, as Cornac requires a user-item interaction matrix, it only accepts one entry for any user-item pair.
 This has the following consequences:
-   * a) The UxIxR matrix cannot distinguish between an item being from the history vs. the impression list.
+   * a) The user-item interaction matrix cannot distinguish between an item being from the history vs. the impression list.
    * b) To have access to both the history and the impression articles, the history is folded into the impression (to make a distinction later on, the original history is provided as an additional parameter to the model).
    * c) Impressions are combined.
    (Articles can appear in multiple impressiions of users.
    Once with a read status, once witn an unread one.
    We now combine reacords for each user-item pair by saying that a user has read an item if there is at least one impression where the item is merked as read.)
-   All data is automatically saved to a CSV containing the relevant impression items for the subsqeuent models in the UxIxR format.
+   All data is automatically saved to a CSV containing the relevant impression items for the subsqeuent models in the user-item interaction format.
 
 * Step 3A-3 (**neural_preparation/generate_word_embedding.py**): Prepartion of the word embedding file for the neural models.
 This required two inputs: **cleaned_articles.csv** (see Step 2) and the fastText 300d word vector for Danish (https://fasttext.cc/docs/en/crawl-vectors.html).
@@ -122,7 +122,7 @@ Please find the relevant files for this step in the folder: **PLD_EPD_preparatio
 
 ### Part D - Creating Random Baseline
 Please find the relevant files for this step in the folder: **experiment_scripts/random_ebnerd_small.py**.
-All you need to do is to run the random baseline script with the relevant UxIxR metrix and item pool as input. 
+All you need to do is to run the random baseline script with the relevant user-item interaction metrix and item pool as input. 
 
 ## Step 4 - Evaluation Metrics
 Please find the relevant file for this step in the folder: **evaluation_scripts**.
