@@ -21,7 +21,7 @@ For an overview of how to install the codebase and how to run the experiment wor
 
 ## Citation
 
-If you use any code or data of this repository in a scientific publication, we ask you to cite the following paper:
+If you use any code or data from this repository in a scientific publication, we ask you to cite the following paper:
 
 - [Informfully - Research Platform for Reproducible User Studies](https://dl.acm.org/doi/10.1145/3640457.3688066), Heitz *et al.*, Proceedings of the 18th ACM Conference on Recommender Systems, 2024.
 
@@ -36,9 +36,9 @@ If you use any code or data of this repository in a scientific publication, we a
   ```
 
 ## Contributing
-Your are welcome to contribute to the Informfully ecosystem and become a part of our community. Feel free to:
+You are welcome to contribute to the Informfully ecosystem and become a part of our community. Feel free to:
   - fork any of the [Informfully repositories](https://github.com/Informfully)
-  - join and write on the [dicussion board](https://github.com/orgs/Informfully/discussions)
+  - join and write on the [discussion board](https://github.com/orgs/Informfully/discussions)
   - make changes and create pull requests
 
 Please post your feature requests and bug reports in our [GitHub issues](https://github.com/Informfully/Documentation/issues) section.
