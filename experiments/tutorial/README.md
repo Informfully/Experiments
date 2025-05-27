@@ -18,7 +18,7 @@ This repository is organized as follows:
 * **experiment_reranking_scripts**: Code to re-rank the candidate lists.
 * **experiment_scripts**: Code to initialize and run the recommender pipeline.s
 * **graph_preparation**: Code to create and augment the graphs required for random walks.
-* **neural_preparation**: Code to enrich merge and format the dataset for the neural baseline models.
+* **neural_preparation**: Code to enrich, merge, and format the dataset for the neural baseline models.
 * **PLD_EPD_preparation**: Code to prepare the data and run PLD and EPD algorithms.
 
 Please follow the steps outlined below.
@@ -47,20 +47,20 @@ Please find the relevant files for this step in the folder: **article_enrichment
 Please make sure to install **pandas** and **pyarrow** (for reading and writing **.parquet** files) before continuing this tutorial.
 Two main actions are performed:
    * a) For each article, we combined the title and the subtitle/lead to make a longer article input title to train the neural model.
-   * b) We then check if have a complete data entry for article entry.
-   This includes the following attributes: published_time, body, title, category_str,article_id.
+   * b) We then check if we have a complete data entry for the article entry.
+   This includes the following attributes: published_time, body, title, category_str, and article_id.
    If any columns are empty or null, we add the article ID to **incomplete_ids**.
    This flags them for removal.
-   * c) We then the cleaned article data where all articles in **incomplete_ids** are removed from the item pool.
+   * c) We then cleaned the article data, where all articles in **incomplete_ids** are removed from the item pool.
    This results in a clean data collection that is then converted to a CSV.
-   The CSV file contains the following attributes: article_id, title, body, published_date, category. 
+   The CSV file contains the following attributes: article_id, title, body, published_date, and category. 
    This file serves as the input for the next step, the data enrichment.
    Upon successful completion, the output of **data_cleaning.py** creates the following files: incomplete_article_ids.txt (the removed items) and cleaned_articles.csv (for article enrichment).
 
 * Step 2-2 (**article_enrichment_scripts/article_enrich.py**): Run the augmentation scripts for sentiment, category, political entities, and story enrichments.
    * a) Before running **article_enrich.py**, you need to change the **config.py**.
     Everything can stay the same as in our example.
-    However, you might want to change the path for the input file: **input_file_path** (the full path of the previous mentioned CSV **cleaned_articles.csv**) and **output_file_path** (your path to stored the enriched JSON files).
+    However, you might want to change the path for the input file: **input_file_path** (the full path of the previously mentioned CSV **cleaned_articles.csv**) and **output_file_path** (your path to store the enriched JSON files).
     Please note that running the enrichment script requires an active internet connection, as it uses Wikidata for the enrichment process.
    * b) Upon successful completion, you will find the enriched JSON files in the path specified in **config.py**.
     This includes: category.json, enriched_named_entities.json, min_maj_ratio.json, named_entities.json, party.json, readability.json, region.json, sentiment.json, story.json.
@@ -75,7 +75,7 @@ Please find the relevant files for this step in the folder: **neural_preparation
 * Step 3A-1 (**neural_preparation/combine_train_test_user_history.py**): Extract user history from the EB-NeRD behavior file (this combines the history in the training and test set for each user, because the neural models’ input is limited to only one user history file).
 The following two combination steps exist:
    * a) For users that are both in the training and validation set: Keep the history of the train **history.parquet** file.
-   (The history in the validaiton set can be ignored, as it is a copy of the training history.)
+   (The history in the validation set can be ignored, as it is a copy of the training history.)
    * b) For users only appear in the validation set: Use the history info from **history.parquet**.
    (The validation history can be used for training purposes, as the prediction task is tone on the impressions only, and not on any history.)
 
@@ -86,43 +86,43 @@ This has the following consequences:
    * a) The user-item interaction matrix cannot distinguish between an item being from the history vs. the impression list.
    * b) To have access to both the history and the impression articles, the history is folded into the impression (to make a distinction later on, the original history is provided as an additional parameter to the model).
    * c) Impressions are combined.
-   (Articles can appear in multiple impressiions of users.
-   Once with a read status, once witn an unread one.
-   We now combine reacords for each user-item pair by saying that a user has read an item if there is at least one impression where the item is merked as read.)
-   All data is automatically saved to a CSV containing the relevant impression items for the subsqeuent models in the user-item interaction format.
+   (Articles can appear in multiple impressions of users.
+   Once with a read status, once with an unread one.
+   We now combine records for each user-item pair by saying that a user has read an item if there is at least one impression where the item is marked as read.)
+   All data is automatically saved to a CSV containing the relevant impression items for the subsequent models in the user-item interaction format.
 
-* Step 3A-3 (**neural_preparation/generate_word_embedding.py**): Prepartion of the word embedding file for the neural models.
+* Step 3A-3 (**neural_preparation/generate_word_embedding.py**): Preparation of the word embedding file for the neural models.
 This required two inputs: **cleaned_articles.csv** (see Step 2) and the fastText 300d word vector for Danish (https://fasttext.cc/docs/en/crawl-vectors.html).
-Running the script will create separate JSON file embedding that is leveraged by the neural models for article similarity.
+Running the script will create a separate JSON file embedding that is leveraged by the neural models for article similarity.
 
 * Step 3A-4 (pick neural model from folder: **experiment_scripts**): Prepare and run the experiment scripts (one for each mode), where you can specify the details for running the specific model (we provide a sample script with all the parameters used in our experiment for neural models.
 
-* Step 3A-5 (pick re-ranking approach from folder: **experiment_reranking_scripts**): Run re-ranking experiment script (one for each re-ranking approach, this skips the recommendation step and use pre-calculated candidate items/ranked list.
+* Step 3A-5 (pick re-ranking approach from folder: **experiment_reranking_scripts**): Run re-ranking experiment script (one for each re-ranking approach, this skips the recommendation step and uses pre-calculated candidate items/ranked list.
 
 ### Part B - Running Random Walk
 Please find the relevant files for this step in the folder: **graph_preparation** and **experiment_scripts**
 
 * Step 3B-1 (**graph_preparation/generate_uir_augmentation_top3_combined_his.py**): Run graph creation and augmentation scripts with the EB-NeRD behavior file as input. 
-The additional augmentation step is required to integrade cold items into the graph.
+The additional augmentation step is required to integrate cold items into the graph.
 We use the EB-NeRD work embeddings for the similarity calculations (xlm_roberta_base.parquet).
 
 * Step 3B-2 (**graph_preparation/process_party_data.py**): For D-RDW, you need to generate a new **party.json** before running D-RDW using the provided script.
 This helps to organize/map the political landscape.
-In our exapmle, we provide a simplyfied mapping of the political landscape by using the broad categories of: a) government parties and supporting parties, b) opposition parties, and c) independent and foreign parties.
-This division into different party buckets can be customized or you can choose to pick the default one that was just outlined.
+In our example, we provide a simplified mapping of the political landscape by using the broad categories of: a) government parties and supporting parties, b) opposition parties, and c) independent and foreign parties.
+This division into different party buckets can be customized, or you can choose to pick the default one that was just outlined.
 
 * Step 3B-3 (pick random walk from folder: **experiment_scripts**): Prepare and run the experiment scripts (one for each model), where you can specify the details for running the specific model (we provide a sample script with all the parameters used in our experiment for random walks.
 
 ### Part C- Running Filtering Algorithms
 Please find the relevant files for this step in the folder: **PLD_EPD_preparation**
 
-* Step 3C-1 {**process_party_data_{datasetname}.py**}: Run the script with either 'ebnerd' or 'nemig' in the name to to compute party classification.
+* Step 3C-1 {**process_party_data_{datasetname}.py**}: Run the script with either 'ebnerd' or 'nemig' in the name to compute party classification.
 
 * Step 3C-2 (**PLD_train_uir_processing.py**): Run this script to produce the training set uir format for the PLD model.
 
 ### Part D - Creating Random Baseline
 Please find the relevant files for this step in the folder: **experiment_scripts/random_ebnerd_small.py**.
-All you need to do is to run the random baseline script with the relevant user-item interaction metrix and item pool as input. 
+All you need to do is run the random baseline script with the relevant user-item interaction metric and item pool as input. 
 
 ## Step 4 - Evaluation Metrics
 Please find the relevant file for this step in the folder: **evaluation_scripts**.
@@ -132,16 +132,16 @@ Instead, we time and log all events.
 That way we can calculate how long it took to successfully complete a given task.)
 The following conditions apply to running the evaluation:
 
-* RADio, Gini, and ILD are calculated using top 20 items of the candidate list.
-We provide a separate script that reduces and recommendations to 20 items (**compute_top20_list.py**).
-This needs to be applied to all neural models and random walk models, except D-RDW (this has a max. recommendation limitation already included.)
-Apart from limiting the number of recommendations, this scrip also filters out and recommended item that a user already has in their history.
+* RADio, Gini, and ILD are calculated using the top 20 items of the candidate list.
+We provide a separate script that reduces and calculates only the top 20 recommendations (**compute_top20_list.py**).
+This needs to be applied to all neural models and random walk models, except D-RDW (this has a max. recommendation limitation already included).
+Apart from limiting the number of recommendations, this script also filters out and recommends items that a user already has in their history.
 * Norm-aware RADio diversity metrics are calculated using **check_diversity_ebnerd/check_radio.py**, traditional diversitc metrics can be fourn in **check_diversity_ebnerd/check_diversity.py**, and AUC is in **compute_auc.py**.
 * Intra-List Distances (**generate_party_one_hot.py** and **generate_senti_one_hot.py**): We need vectors for the calculation of the intra-list distance for recommendations.
-The two scripts provided here will encode party and sentiment of articles into pre-defined buckets.
-(Both the party and sentiment vectory are required to successfully compute ILD.)
+The two scripts provided here will encode the party and sentiment of articles into pre-defined buckets.
+(Both the party and sentiment vectors are required to successfully compute ILD.)
 There is no vector for category, it is just a list of different categories.
-(The category information is in the article dataset where you can map the article raw ID the catefory for every item in the article pool.)
+(The category information is in the article dataset, where you can map the article raw ID to the category for every item in the article pool.)
 * RADio Representation (**party_binary.py**): We used the binary mention of party in each article.
 I.e., if an article is mentioned multiple times, it is only counted as once. 
 For articles without party mentions, there is a special entry {"No party":1} generated by a dedicated script (party_binary.py).
