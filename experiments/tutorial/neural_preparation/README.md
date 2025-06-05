@@ -1,6 +1,6 @@
 # Preparation for Running Neural Models
 
-This guide explains how to prepare the training and test inputs required by our neural recommendation models for the following datasets: **Eb-NERD**, **NeMig**, and **MIND**.
+This guide explains how to prepare the training and test inputs required by our neural recommendation models for the following datasets: **EB-NeRD**, **NeMig**, and **MIND**.
 
 
 ## 1. Generate Train/Test Splits and User History
@@ -15,7 +15,7 @@ Each dataset must produce the following files:
     "user_id_1": ["item_id_1", "item_id_2", ...],
     "user_id_2": ["item_id_3", "item_id_4", ...]
   }
-````
+  ```
 
 * `article_pool.csv` — unique item IDs appearing in the test impressions.
 This file is used for our experiments.
@@ -29,7 +29,7 @@ This file is used for our experiments.
   * We found in the dataset, each user has **5 impressions**.
   * Randomly selecting **1** impression for testing, the remaining **4** for training.
 
-### Eb-NERD
+### EB-NeRD
 
 Use the following scripts (in order) from the `ebnerd` folder:
 
@@ -57,7 +57,7 @@ pip install gensim
 | Dataset | Language | Source                                                                        |
 | ------- | -------- | ----------------------------------------------------------------------------- |
 | NeMig   | German   | [FastText 300d crawl vectors](https://fasttext.cc/docs/en/crawl-vectors.html) |
-| Eb-NERD | Danish   | [FastText 300d crawl vectors](https://fasttext.cc/docs/en/crawl-vectors.html) |
+| EB-NeRD | Danish   | [FastText 300d crawl vectors](https://fasttext.cc/docs/en/crawl-vectors.html) |
 | MIND    | English  | [GloVe 840B, 300d](https://nlp.stanford.edu/projects/glove/)                  |
 
 ### Step 3: Run `generate_word_embedding.py`
