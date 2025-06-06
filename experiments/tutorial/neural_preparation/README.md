@@ -2,7 +2,6 @@
 
 This guide explains how to prepare the training and test inputs required by our neural recommendation models for the following datasets: **EB-NeRD**, **NeMig**, and **MIND**.
 
-
 ## 1. Generate Train/Test Splits and User History
 
 Each dataset must produce the following files:
@@ -40,8 +39,6 @@ Use the following scripts (in order) from the `ebnerd` folder:
 3. `generate_uir_test_impression.py`
    → generates `uir_impression_test.csv` and `article_pool.csv`
 
-
-
 ## 2. Clean Titles and Build Word Embeddings
 
 Follow these steps to preprocess item titles and generate embedding matrices:
@@ -71,7 +68,3 @@ Update the script to point to the downloaded vector directory, then run it. It w
 | `embedding_matrix.npy`         | NumPy array of shape `(vocab_size, 300)`; first row is all zeros                      |
 
 By default, all outputs are saved under `{datasetname}_results`.
-
-
-
-

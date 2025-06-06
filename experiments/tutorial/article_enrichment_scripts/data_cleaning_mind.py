@@ -18,7 +18,6 @@ df_news = pd.read_csv(articles_path)
 # Filter rows where "text" is NaN or empty (including spaces)
 empty_text_rows = df_news[df_news["body"].isna() | (df_news["body"].str.strip() == "")]
 
-
 incomplete_ids = empty_text_rows["news_id"].tolist()
 print(f"Len incomplete articles:{len(incomplete_ids)}")
 
@@ -31,11 +30,9 @@ print(f"Len incomplete articles:{len(incomplete_ids)}")
 ###
 ### Articles missing any of these fields will be considered incomplete and need to be added to incomplete_ids.
 
-
 # Remove the incomplete rows from df_news
-df_news = df_news[~empty_text_rows].reset_index(drop=True)
-
-
+mask = ~(df_news["body"].isna() | (df_news["body"].str.strip() == ""))
+df_news = df_news[mask].reset_index(drop=True)
 
 ################  After validating article completeness, remove invalid rows and rename columns
 
@@ -47,9 +44,6 @@ df_news = df_news[~empty_text_rows].reset_index(drop=True)
 #     'category': 'category'  
 # })[['id', 'title', 'text', 'date', 'category']]
 
-
-
-
 # save the cleaned article csv
 output_folder = './mind_results'
 if not os.path.exists(output_folder):
@@ -58,8 +52,8 @@ if not os.path.exists(output_folder):
 output_cleaned_article_path = os.path.join(output_folder, "cleaned_articles.csv")
 df_news.to_csv(output_cleaned_article_path, index=False)
 
-
 incomplete_ids_path = os.path.join(output_folder, "incomplete_article_ids.txt")
+
 # save the removed article ids to text. 
 with open(incomplete_ids_path, 'w') as f:
     for article_id in incomplete_ids:
