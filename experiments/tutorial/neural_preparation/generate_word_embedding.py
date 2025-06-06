@@ -5,13 +5,29 @@ import json
 from gensim.models import FastText
 import os
 
-# Step 1: Load the pre-trained word embeddings
 
+class GloveWrapper:
+    def __init__(self, glove_dict):
+        self.wv = self.WordVecs(glove_dict)
+        self.vector_size = 300  # or len(any_vector) to infer dynamically
+
+
+class WordVecs:
+    def __init__(self, glove_dict):
+        self.glove_dict = glove_dict
+    def __contains__(self, key):
+        return key in self.glove_dict
+    def __getitem__(self, key):
+        return self.glove_dict[key]
+    
+
+# Step 1: Load the pre-trained word embeddings
+#
 # ---------------------------------------
-#  For Mind, use glove.840B.300d.txt
+# For Mind, use glove.840B.300d.txt
 # glove_path = "glove.840B.300d.txt"
 # glove_dict = {}
-
+#
 # with open(glove_path, "r", encoding="utf-8") as f:
 #     for line in f:
 #         values = line.strip().split(" ")  
@@ -21,21 +37,21 @@ import os
 #             glove_dict[word] = vector  
 #         except ValueError as e:
 #             print(f"Skipping malformed line: {line[:50]}... Error: {e}")
-
+#
 # print(f"Loaded {len(glove_dict)} word vectors.")
+# model = GloveWrapper(glove_dict)
 
 # ---------------------------------------
 # For Eb_Nerd,  FastText Danish vector (300-dimensional)
-# model_path = 'cc.da.300.bin' # Adjust this path to your actual file location
+# input_folder = './ ebnerd _input' 
+# model_path =  os.path.join(input_folder,'cc.da.300.bin') # Adjust this path to your actual file location
 # model = FastText.load_fasttext_format(model_path)
-
 
 # ---------------------------------------
 #  For NeMig, use FastText German 300d vector, refer to https://fasttext.cc/docs/en/crawl-vectors.html
 input_folder = './nemig_input'
 model_path =  os.path.join(input_folder,'cc.de.300.bin')  # Adjust this path to your actual file location
 model = FastText.load_fasttext_format(model_path)
-
 
 
 # Step 2: Function to tokenize the sentence into words (consider punctuation as separate tokens)
@@ -54,12 +70,11 @@ def word_tokenize(sent):
     else:
         return []
 
-
-
 dataset_result_folder =  './nemig_results'
 incompelete_article_path = os.path.join(dataset_result_folder, "cleaned_articles.csv")
 df = pd.read_csv(incompelete_article_path, usecols=["id", "title"])
 article_title = dict(zip(df["id"], df["title"]))
+
 
 def detokenize(tokens):
     sentence = ""
@@ -80,7 +95,6 @@ for news_id, title in article_title.items():
     valid_words = [word for word in words if word in model.wv]
     if valid_words: # Only keep non-empty titles
         filtered_news_title_dict[news_id] = detokenize(valid_words)
-
 
 # Save the cleaned Title as a JSON file 
 cleaned_title_path = os.path.join(dataset_result_folder, "cleaned_id_title_mapping.json")
@@ -113,13 +127,11 @@ embedding_matrix = np.array(embedding_list)
 print("len Word Index Dictionary:", len(word_index_dict))
 print("Embedding Matrix Shape:", embedding_matrix.shape)
 
-
 # Step 6: Save the word index dictionary to a JSON file
 word_index_path = os.path.join(dataset_result_folder, "word_index_dict.json")
 
 with open(word_index_path, 'w', encoding='utf-8') as json_file:
     json.dump(word_index_dict, json_file, ensure_ascii=False, indent=4)
-
 
 # Step 7: Save the embedding matrix to a .npy file
 emb_matrix_path = os.path.join(dataset_result_folder, "embedding_matrix.npy")
