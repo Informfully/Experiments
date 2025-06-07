@@ -8,11 +8,11 @@ sys.path.insert(0, current_dir)
 
 input_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'mind_input')
 
-# load Mind dataset
+# Load MIND
 articles_path = os.path.join(input_folder, 'news.csv')
 
 df_news = pd.read_csv(articles_path)  
-### some news articles lack body text information
+# Some news articles lack body text information (e.g., videos)
 # missing_count = df["body"].isna().sum()
 
 # Filter rows where "text" is NaN or empty (including spaces)
@@ -27,24 +27,22 @@ print(f"Len incomplete articles:{len(incomplete_ids)}")
 ### - text (body)
 ### - date (publication time)
 ### - category
-###
 ### Articles missing any of these fields will be considered incomplete and need to be added to incomplete_ids.
 
 # Remove the incomplete rows from df_news
 mask = ~(df_news["body"].isna() | (df_news["body"].str.strip() == ""))
 df_news = df_news[mask].reset_index(drop=True)
 
-################  After validating article completeness, remove invalid rows and rename columns
+# After validating article completeness, remove invalid rows and rename columns
+df_news = df_news.rename(columns={
+    'news_id': 'id',
+    'new_title': 'title',
+    'body': 'text',
+    'published_time': 'date',
+    'category': 'category'
+    })[['id', 'title', 'text', 'date', 'category']]
 
-# df_news = df_news.rename(columns={
-#     'news_id': 'id',
-#     'new_title': 'title',
-#     'body': 'text',
-#     'published_time': 'date',
-#     'category': 'category'  
-# })[['id', 'title', 'text', 'date', 'category']]
-
-# save the cleaned article csv
+# Save the cleaned article CSV
 output_folder = './mind_results'
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
@@ -54,7 +52,7 @@ df_news.to_csv(output_cleaned_article_path, index=False)
 
 incomplete_ids_path = os.path.join(output_folder, "incomplete_article_ids.txt")
 
-# save the removed article ids to text. 
+# Save the removed article IDs to text
 with open(incomplete_ids_path, 'w') as f:
     for article_id in incomplete_ids:
         f.write(f"{article_id}\n")
