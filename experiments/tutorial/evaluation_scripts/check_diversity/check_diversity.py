@@ -15,7 +15,7 @@ from collections import OrderedDict
 from collections import defaultdict
 
 save_path = "your_folder_to_save_model_recommendation_results"   #'./experiment_{dataset_name}_drdw_results/{model_name}
-
+datasetname = "nemig" # change datasetname here
 print(f"save_path:{save_path}")
 file_path = os.path.join(save_path, "top20_recommendation.pkl")
 
@@ -85,14 +85,14 @@ positive_ratings = get_user_rated_items(mind_ratio_split.test_set)
 negative_ratings = get_user_unclicked_items(mind_ratio_split.test_set)
 
 # Load item feature
-sentiment = mind.load_sentiment(fpath="./{datasetname}_results/sentiment.json")
-category = mind.load_category(fpath="./{datasetname}_results/category.json")
-complexity = mind.load_complexity(fpath="./{datasetname}_results/readability.json")
-genre = mind.load_category_multi(fpath="./{datasetname}_results/category.json")
+sentiment = mind.load_sentiment(fpath=f"./{datasetname}_results/sentiment.json")
+category = mind.load_category(fpath=f"./{datasetname}_results/category.json")
+complexity = mind.load_complexity(fpath=f"./{datasetname}_results/readability.json")
+genre = mind.load_category_multi(fpath=f"./{datasetname}_results/category.json")
 
-min_maj = mind.load_min_maj(fpath="./{datasetname}_results/min_maj_ratio.json")
-sentiment_one_hot_encoded_vectors = mind.load_encoding_vectors(fpath="./{datasetname}_results/sentiment_vectors.json") # sentiment one-hot vectors by range
-party_one_one_hot_encoded_vectors = mind.load_encoding_vectors(fpath="./{datasetname}_results/party_vectors.json")# party one-hot vectors by party classification
+min_maj = mind.load_min_maj(fpath=f"./{datasetname}_results/min_maj_ratio.json")
+sentiment_one_hot_encoded_vectors = mind.load_encoding_vectors(fpath=f"./{datasetname}_results/sentiment_vectors.json") # sentiment one-hot vectors by range
+party_one_one_hot_encoded_vectors = mind.load_encoding_vectors(fpath=f"./{datasetname}_results/party_vectors.json")# party one-hot vectors by party classification
 Item_sentiment = mind.build(data=sentiment, id_map=mind_ratio_split.global_iid_map)
 Item_category = mind.build(data=category, id_map=mind_ratio_split.global_iid_map)
 Item_complexity = mind.build(data=complexity, id_map=mind_ratio_split.global_iid_map)
