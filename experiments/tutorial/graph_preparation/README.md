@@ -2,8 +2,6 @@
  
 This folder contains data preparation scripts for graph-based recommendation models such as **D-RDW**, **Rp3beta**, and **RWE-D**.
 
----
-
 ## Overview
 
 For graph-based methods, the bipartite graph includes:
@@ -17,14 +15,10 @@ To incorporate unknown items into the graph, we:
 2. Propagate user interactions from similar known items to these unknown items.
 3. This ensures all test items are represented on the graph.
 
-
-
 ## Note
 
 - The **EB-Nerd** dataset provides article embeddings directly, so no embedding creation is needed.
 - For **NeMig** and **Mind**, embeddings are **not provided**. We generate article embeddings using `sentence-transformers`.
-
-
 
 ## Instructions
 
@@ -43,7 +37,6 @@ To incorporate unknown items into the graph, we:
 
 4. After embedding generation, proceed with graph augmentation using the prepared embeddings.
 Execute `generate_uir_augmentation_top3_combined_his.py`.
-
 
 ###  Instructions for using `generate_uir_augmentation_top3_combined_his.py`
 
@@ -69,5 +62,3 @@ Refer to `neural_preparation/README.md` for instructions on how to generate thes
 The script generates:
 
 * `augmented_uir_top{TopN}similar.csv` (augmented user–item interaction file with added interactions from similar items.)
-
-

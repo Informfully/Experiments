@@ -106,10 +106,28 @@ Please find the relevant files for this step in the folder: **graph_preparation*
 The additional augmentation step is required to integrate cold items into the graph.
 We use the EB-NeRD work embeddings for the similarity calculations (xlm_roberta_base.parquet).
 
-* Step 3B-2 (**graph_preparation/process_party_data.py**): For D-RDW, you need to generate a new **party.json** before running D-RDW using the provided script.
-This helps to organize/map the political landscape.
+* Step 3B-2 (**experiment_scripts/drdw_experiment.py**): For D-RDW, you first need to define a target distribution (see script, line 65ff.).
 In our example, we provide a simplified mapping of the political landscape by using the broad categories of: a) government parties and supporting parties, b) opposition parties, and c) independent and foreign parties.
-This division into different party buckets can be customized, or you can choose to pick the default one that was just outlined.
+This division into different party buckets can be customized.
+The script will then automatically detect any mentions of the parties that you have specified.
+For this detection, there are two option available.
+
+  1) 'only_mentions' option counts mentions if it detects a subset of the specified party buckets, and no other parties from unspecified buckets in the article.
+  For example, the list ['party1', 'party2'] and an article that mentions only 'party1' will match.
+  If the article were to include 'party3' it would not match.
+  2) 'composition' option counts mentions if it detects a subet for each specified party bucket.
+  For example. the list with two buckets [['party1', 'party2'], ['party3', 'party4']] will match an article that contains ['party1', 'party4'].
+  If will not match if a party from one of the buckets is absent.
+  It will also not match if there is a 'party5' not present in any of the buckets.
+
+<!--
+By default, the target distribution creates five conditions:
+1) government parties,
+2) oppotision parties,
+3) government and opposition parties,
+4) other parties (e.g., foreign parties), and 
+5) no political parties.
+-->
 
 * Step 3B-3 (pick random walk from folder: **experiment_scripts**): Prepare and run the experiment scripts (one for each model), where you can specify the details for running the specific model (we provide a sample script with all the parameters used in our experiment for random walks.
 
