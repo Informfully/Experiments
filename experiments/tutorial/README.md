@@ -110,20 +110,20 @@ We use the EB-NeRD work embeddings for the similarity calculations (xlm_roberta_
 In our example, we provide a simplified mapping of the political landscape by using the broad categories of: a) government parties and supporting parties, b) opposition parties, and c) independent and foreign parties.
 This division into different party buckets can be customized.
 The script will then automatically detect any mentions of the parties that you have specified.
-For this detection, there are two option available.
+For this detection, there are two options available.
 
   1) 'only_mentions' option counts mentions if it detects a subset of the specified party buckets, and no other parties from unspecified buckets in the article.
   For example, the list ['party1', 'party2'] and an article that mentions only 'party1' will match.
-  If the article were to include 'party3' it would not match.
-  2) 'composition' option counts mentions if it detects a subet for each specified party bucket.
-  For example. the list with two buckets [['party1', 'party2'], ['party3', 'party4']] will match an article that contains ['party1', 'party4'].
-  If will not match if a party from one of the buckets is absent.
+  If the article were to include 'party3', it would not match.
+  2) 'composition' option counts mentions if it detects a subset for each specified party bucket.
+  For example, the list with two buckets [['party1', 'party2'], ['party3', 'party4']] will match an article that contains ['party1', 'party4'].
+  It will not match if a party from one of the buckets is absent.
   It will also not match if there is a 'party5' not present in any of the buckets.
 
 <!--
 By default, the target distribution creates five conditions:
 1) government parties,
-2) oppotision parties,
+2) opposition parties,
 3) government and opposition parties,
 4) other parties (e.g., foreign parties), and 
 5) no political parties.
@@ -147,7 +147,7 @@ Please find the relevant file for this step in the folder: **evaluation_scripts*
 Run the evaluation script for calculating norm-aware diversity (RADio), traditional diversity (Gini, ILD), and AUC.
 (Please note that there is no separate script for energy cost.
 Instead, we time and log all events.
-That way we can calculate how long it took to successfully complete a given task.)
+That way, we can calculate how long it took to successfully complete a given task.)
 The following conditions apply to running the evaluation:
 
 * RADio, Gini, and ILD are calculated using the top 20 items of the candidate list.
@@ -158,7 +158,7 @@ Apart from limiting the number of recommendations, this script also filters out 
 * Intra-List Distances (**generate_party_one_hot.py** and **generate_senti_one_hot.py**): We need vectors for the calculation of the intra-list distance for recommendations.
 The two scripts provided here will encode the party and sentiment of articles into pre-defined buckets.
 (Both the party and sentiment vectors are required to successfully compute ILD.)
-There is no vector for category, it is just a list of different categories.
+There is no vector for category; it is just a list of different categories.
 (The category information is in the article dataset, where you can map the article raw ID to the category for every item in the article pool.)
 * RADio Representation (**party_binary.py**): We used the binary mention of party in each article.
 I.e., if an article is mentioned multiple times, it is only counted as once. 
