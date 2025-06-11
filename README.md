@@ -12,12 +12,11 @@ Informfully is an open-source reproducibility platform for content distribution 
 This repository contains all the experiment configuration files to reproduce the findings of our papers and research that use the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
 For an overview of how to install the codebase and how to run the experiment workflows shared here, please follow the [Online Tutorial](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial).
 
-| Experiment | Description | Repository | Paper |
-|-|-|-|-|
-| Online Tutorial | Sample Files for Informfully Recommenders | [Folder](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial) | N/A |
-| RecSys '24 | ACM RecSys '24 Challenge | [Folder](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_challenge_2024) | [Paper](https://dl.acm.org/doi/abs/10.1145/3687151.3687155) |
-<!-- | Diversity-driven Random Walks | TBD | F[older](https://github.com/Informfully/Experiments/tree/main/experiments/diversity_random_walks) | Paper(TBD) | -->
-<!-- | TBD | TBD | Folder | Paper | -->
+| Experiment | Tutorial | Resources |
+|-|-|-|
+| Sample Files for Informfully Recommenders | [Readme](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial) | N/A |
+| ACM RecSys '24 Challenge | [Readme](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_challenge_2024) | [Paper](https://dl.acm.org/doi/abs/10.1145/3687151.3687155), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta) |
+<!-- | Name | [Folder](TBD) | [Paper](TBD) | -->
 
 ## Citation
 
