@@ -87,7 +87,6 @@ opp_parties = {
 
 - Party counts (i.e., the numeric values in the input) are **retained and summed** within each classified group (`GOV_PARTIES`, `OPP_PARTIES`, `INDEP_FOREIGN_PARTIES`).
 
-
 ## PLD Train U-I-R
 
 PLD requires user-item interaction from train impression logs, train user history, and test user history.
@@ -112,3 +111,4 @@ Refer to `neural_preparation/README.md` for instructions on how to generate thes
   **`PLD_uir_trainImp_trainHis_testHis.csv`**
   
   By default, it is saved in the `{datasetname}_results` folder.
+  

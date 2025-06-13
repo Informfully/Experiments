@@ -38,14 +38,13 @@ To incorporate unknown items into the graph, we:
 4. After embedding generation, proceed with graph augmentation using the prepared embeddings.
 Execute `generate_uir_augmentation_top3_combined_his.py`.
 
-###  Instructions for using `generate_uir_augmentation_top3_combined_his.py`
+### Instructions for using `generate_uir_augmentation_top3_combined_his.py`
 
 Before running the script, ensure the following files are prepared:
 
 * `uir_impression_train.csv` — user–item–rating interactions from the training set impression logs.
 * `uir_impression_test.csv` — user–item–rating interactions from the test set impression logs.
 * `combined_user_history.json` — browsing history per user
-
 
 Refer to `neural_preparation/README.md` for instructions on how to generate these files.
 

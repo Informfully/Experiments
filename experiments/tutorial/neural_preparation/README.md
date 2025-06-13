@@ -43,13 +43,13 @@ Use the following scripts (in order) from the `ebnerd` folder:
 
 Follow these steps to preprocess item titles and generate embedding matrices:
 
-### Step 1: Install Dependencies
+### 2.1: Install Dependencies
 
 ```bash
 pip install gensim
 ```
 
-### Step 2: Download Pretrained Word Vectors
+### 2.2: Download Pretrained Word Vectors
 
 | Dataset | Language | Source                                                                        |
 | ------- | -------- | ----------------------------------------------------------------------------- |
@@ -57,7 +57,7 @@ pip install gensim
 | EB-NeRD | Danish   | [FastText 300d crawl vectors](https://fasttext.cc/docs/en/crawl-vectors.html) |
 | MIND    | English  | [GloVe 840B, 300d](https://nlp.stanford.edu/projects/glove/)                  |
 
-### Step 3: Run `generate_word_embedding.py`
+### 2.3: Run `generate_word_embedding.py`
 
 Update the script to point to the downloaded vector directory, then run it. It will produce:
 
