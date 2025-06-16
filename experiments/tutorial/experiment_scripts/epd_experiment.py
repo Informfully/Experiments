@@ -1,31 +1,27 @@
-#############################################################################################################                                                                        #
-# DESCRIPTION:  Example for exposure diversity(epd) model experiment in mind dataset                        #
-#############################################################################################################
-
-import logging, os
-logging.disable(logging.WARNING)
 import cornac
 from cornac.datasets import mind
 from cornac.eval_methods import BaseMethod
 from cornac.models import EPD
 from cornac.metrics import Recall
 from cornac.utils import common
-import pandas as pd
 
+import pandas as pd
 import os
 import json
+import random
 import sys
+
+import logging, os
+logging.disable(logging.WARNING)
 
 
 dataset_name = 'nemig'
-
 input_path = f'./{dataset_name}_results'
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, current_dir)
 config_files_dir = os.path.join(current_dir, 'configs')
 sys.path.insert(0, config_files_dir)
-
 
 # Update the path for different dataset.
 # input_path = './mind_results'
@@ -42,33 +38,21 @@ impression_items_df = pd.read_csv(article_pool_path, dtype ={'iid': str})
 impression_iid_list = impression_items_df['iid'].tolist()
 
 political_ref_path =  os.path.join(input_path, 'political_reference_epd.json')
-
-
-
 party_input_path = input_path
 
 ## For EB-Nerd and Nemig, load the converted party file. Refer to PLD_EPD_preparation folder.
 ## For Mind, load the raw party file: 'party.json'
 party_path =  os.path.join(party_input_path, 'converted_party.json')
-
-
 config_path  = os.path.join(config_files_dir, 'model_parameters.ini') 
-
-
     
 ratio_split = BaseMethod.from_splits(train_data=feedback_train, test_data=feedback_test, exclude_unknowns=False,
         verbose=True,
         rating_threshold=0.5)
 
-
-
 political_type_dict = {1: 'neutral', 2:'major', 3:'minor'}
 num_items = len(set([i for u,i,r in feedback_train]))
 
 test_uir = list(zip(*ratio_split.test_set.uir_tuple))
-import random
-
-import json
 
 
 def load_user_group_type(uir):
@@ -116,25 +100,19 @@ user_group_save_path = os.path.join(input_path, 'epd_user_groups.json')  # save 
 with open(user_group_save_path, 'w') as f:
     json.dump(cleaned_dict, f, indent=4)
 
-
-
 # initialize models
 model = EPD( 
     name = f"EPD_{dataset_name}",
-    party_path=party_path, 
-    political_type_dict= political_type_dict, 
-    num_items=num_items, 
-    configure_path=config_path,
-        
-    k=2, 
+    party_path = party_path, 
+    political_type_dict = political_type_dict, 
+    num_items = num_items, 
+    configure_path = config_path,
+    k = 2, 
     pageWidth = 20,
     article_pool = impression_iid_list, 
     userGroupDict = user_group_dict, 
     dataset_name = dataset_name , 
-    political_ref_path=political_ref_path)
-
-
-
+    political_ref_path = political_ref_path)
 
 # define metrics to evaluate the models
 metrics = [ Recall(k=20)]
@@ -143,7 +121,7 @@ metrics = [ Recall(k=20)]
 experiment_output_path = f'./experiment_{dataset_name}_epd_results'
 cornac.Experiment(
         eval_method = ratio_split,
-        models=[model],
-        metrics=metrics,
-        save_dir=experiment_output_path
+        models = [model],
+        metrics = metrics,
+        save_dir = experiment_output_path
     ).run()

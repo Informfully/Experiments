@@ -162,7 +162,7 @@ def main():
     targetSize = 20
     metrics = [Recall(k=targetSize)]
 
-    experiment_output_path = f'./experiment_{dataset_name}_results'
+    experiment_output_path = f'./experiment_{dataset_name}_drdw_results'
     # Set up the experiment
     Experiment(
         eval_method = rs,

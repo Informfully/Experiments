@@ -45,7 +45,6 @@ def main():
         rating_threshold = 0.5
     )
     
-
     # Load article attributes
     data_enrichment_path = input_path
     sentiment_file_path  = os.path.join(data_enrichment_path, 'sentiment.json')
@@ -157,7 +156,7 @@ def main():
         item_dataframe = article_feature_dataframe,
         diversity_dimension = ["sentiment", "entities"],
         top_k = targetSize,
-        target_distributions = Target_Mind_distribution,
+        target_distributions = Target_distribution,
         diversity_dimension_weight = [0.5, 0.5],
         user_item_history = user_item_history, 
         rerankers_item_pool = impression_iid_list # for mind setup
@@ -167,7 +166,7 @@ def main():
         item_dataframe = article_feature_dataframe,
         diversity_dimension = ["sentiment", "entities"],
         top_k = targetSize,
-        target_distributions = Target_Mind_distribution,
+        target_distributions = Target_distribution,
         diversity_dimension_weight = [0.5, 0.5],
         user_item_history = user_item_history, 
         rerankers_item_pool = impression_iid_list # for mind setup
@@ -180,23 +179,35 @@ def main():
         rerankers_item_pool = impression_iid_list,
         lamda = 0.1
     )
-    bin_edges = {'sentiment': [-1, -0.5, 0, 0.5, 1]}
-    party_category_json_path = "party_category.json"
-    dynamic_reranker_rank_bias = DynamicAttrReRanker(name="DYN_reranker_probByposition",
-                                                        item_dataframe=article_feature_dataframe, diversity_dimension=["sentiment", "entities"],  top_k=targetSize,
-                                                        feedback_window_size=3, bin_edges=bin_edges, user_choice_model="logarithmic_rank_bias", user_simulator_config_path='user_simulator_config.ini',
-                                                            party_category_json_path = party_category_json_path,
-                                                    user_item_history = user_item_history, 
-                                                    rerankers_item_pool = impression_iid_list
-                                            
-                                                        )
 
-    dynamic_reranker_preference_bias = DynamicAttrReRanker(name="DYN_reranker_probByPreference",
-                                                            item_dataframe=article_feature_dataframe, diversity_dimension=["sentiment", "entities"],  top_k=targetSize,
-                                                            feedback_window_size=3, bin_edges=bin_edges, user_choice_model="preference_based_bias", user_simulator_config_path='user_simulator_config.ini',
-                                                            party_category_json_path = party_category_json_path,
-                                                            user_item_history = user_item_history, 
-                                                            rerankers_item_pool = impression_iid_list)
+    bin_edges = {'sentiment': [-1, -0.5, 0, 0.5, 1]}
+    party_category_json_path = f"./configs/party_category_{dataset_name}.json"
+    dynamic_reranker_rank_bias = DynamicAttrReRanker(
+        name = "DYN_reranker_probByposition",
+        item_dataframe = article_feature_dataframe,
+        diversity_dimension = ["sentiment", "entities"], 
+        top_k = targetSize,
+        feedback_window_size = 3,
+        bin_edges = bin_edges,
+        user_choice_model= "logarithmic_rank_bias",
+        user_simulator_config_path = "./configs/user_simulator_config.ini",
+        party_category_json_path = party_category_json_path,
+        user_item_history = user_item_history,
+        rerankers_item_pool = impression_iid_list)
+
+    dynamic_reranker_preference_bias = DynamicAttrReRanker(
+        name = "DYN_reranker_probByPreference",
+        item_dataframe = article_feature_dataframe,
+        diversity_dimension = ["sentiment", "entities"],
+        top_k = targetSize,
+        feedback_window_size = 3,
+        bin_edges = bin_edges,
+        user_choice_model = "preference_based_bias",
+        user_simulator_config_path = "./configs/user_simulator_config.ini",
+        party_category_json_path = party_category_json_path,
+        user_item_history = user_item_history,
+        rerankers_item_pool = impression_iid_list)
+    
     # Set up the experiment
     pipelineExp = PipelineExperiment(
         model=[model],
