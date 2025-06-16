@@ -10,9 +10,10 @@ And see our online documentation for a detailed [System Overview](https://inform
 
 In this repository, we share our experiment configuration files.
 We provide a short guide on how to reproduce our results.
-To run and everything shown in our paper, you need 1) experiment configuration files (this repository) and 2) a custom extension of the Cornac recommender framework (https://github.com/Informfully/Recommenders).
+To run and everything shown in our paper, you need (1) experiment configuration files (this folder) and (2) a custom extension of the [Cornac recommender framework](https://github.com/Informfully/Recommenders).
 
 This repository is organized as follows:
+
 * **article_enrichment_scripts**: Code to enrich the dataset.
 * **evaluation_scripts**: Code to evaluate the recommender algorithm performance.
 * **experiment_reranking_scripts**: Code to re-rank the candidate lists.
@@ -24,23 +25,25 @@ This repository is organized as follows:
 Please follow the steps outlined below.
 Steps 1-2 are mandatory to execute before running experiments.
 The models shown in Step 3 can be run independently of each other (depending on what models and datasets you want to use).
-Step 4 is optional and can be skipped.
+Step 4, the evaluation of the recommendaitons, is optional and can be skipped.
 
 ## Step 1 - Download and Setup
-* Step 1-1: Download our extended Cornac framework (https://github.com/Informfully/Recommenders).
-Please see the Cornac tutorial (https://github.com/PreferredAI/cornac) for instructions in case there are any questions on how to use the framework.
+
+* Step 1-1: Download our extended Cornac framework calles [Informfully Recommenders](https://github.com/Informfully/Recommenders).
+Please see the [Cornac tutorial](https://github.com/PreferredAI/cornac) for instructions in case there are any questions on how to use the framework.
 But **DO NOT** download the original Cornac codebase, as running our code requires additional functionality.
-For a tutorial and installation instructions, we refer to the official repository (https://github.com/PreferredAI/cornac).
+For a tutorial and installation instructions, we refer to the [official repository](https://github.com/PreferredAI/cornac).
 Once installed, you can access Cornac as an external library.
 Meaning, you can focus on working exclusively with the files shared in this repository and run them from any folder.
 * Step 1-2: In this tutorial, we use the EB-NeRD dataset, but you can use any other dataset of the same format.*
-Download the EB-NeRD dataset from the official website (https://recsys.eb.dk/index.html). 
+Download the EB-NeRD dataset from the [official website](https://recsys.eb.dk/index.html). 
 You need the following files: **ebnerd_small** (iter-item interactions) and **ebnerd_roberta_base** (article embeddings).
 Due to legal reasons, we cannot share the dataset as part of our codebase.
 
-(*) Datasets of the same format for which we provide additional examples are MIND (https://msnews.github.io) and NeMig (https://github.com/andreeaiana/nemig).
+(*) Datasets of the same format for which we provide additional examples are [MIND](https://msnews.github.io) and [NeMig](https://github.com/andreeaiana/nemig).
 
 ## Step 2 - Data Pre-processing
+
 Please find the relevant files for this step in the folder: **article_enrichment_scripts**
 
 * Step 2-1 (**article_enrichment_scripts/data_cleaning.py**): Data cleaning/removal of invalid items (i.e., items with empty or invalid date stamps).
@@ -66,10 +69,12 @@ Two main actions are performed:
     This includes: category.json, enriched_named_entities.json, min_maj_ratio.json, named_entities.json, party.json, readability.json, region.json, sentiment.json, story.json.
 
 ## Step 3 - Running Recommenders
+
 We provide instructions for running neural models (A), random walk models (B), and generating randomized baseline recommendations.
-You can find more information on the neural recommenders used here on the official GitHub repository (https://github.com/recommenders-team/recommenders).
+You can find more information on the neural recommenders used here on the [official GitHub repository](https://github.com/recommenders-team/recommenders).
 
 ### Part A - Running Neural Models
+
 Please find the relevant files for this step in the folder: **neural_preparation**, **experiment_scripts**, and **experiment_reranking_scripts**
 
 * Step 3A-1 (**neural_preparation/combine_train_test_user_history.py**): Extract user history from the EB-NeRD behavior file (this combines the history in the training and test set for each user, because the neural models’ input is limited to only one user history file).
@@ -92,7 +97,7 @@ This has the following consequences:
    All data is automatically saved to a CSV containing the relevant impression items for the subsequent models in the user-item interaction format.
 
 * Step 3A-3 (**neural_preparation/generate_word_embedding.py**): Preparation of the word embedding file for the neural models.
-This required two inputs: **cleaned_articles.csv** (see Step 2) and the fastText 300d word vector for Danish (https://fasttext.cc/docs/en/crawl-vectors.html).
+This required two inputs: **cleaned_articles.csv** (see Step 2) and the [fastText 300d word vector for Danish](https://fasttext.cc/docs/en/crawl-vectors.html).
 Running the script will create a separate JSON file embedding that is leveraged by the neural models for article similarity.
 
 * Step 3A-4 (pick neural model from folder: **experiment_scripts**): Prepare and run the experiment scripts (one for each mode), where you can specify the details for running the specific model (we provide a sample script with all the parameters used in our experiment for neural models.
@@ -100,9 +105,10 @@ Running the script will create a separate JSON file embedding that is leveraged 
 * Step 3A-5 (pick re-ranking approach from folder: **experiment_reranking_scripts**): Run re-ranking experiment script (one for each re-ranking approach, this skips the recommendation step and uses pre-calculated candidate items/ranked list.
 
 ### Part B - Running Random Walk
+
 Please find the relevant files for this step in the folder: **graph_preparation** and **experiment_scripts**
 
-* Step 3B-1 (**graph_preparation/generate_uir_augmentation_top3_combined_his.py**): Run graph creation and augmentation scripts with the EB-NeRD behavior file as input. 
+* Step 3B-1 (**graph_preparation/generate_uir_augmentation_top3_combined_his.py**): Run graph creation and augmentation scripts with the EB-NeRD behavior file as input.
 The additional augmentation step is required to integrate cold items into the graph.
 We use the EB-NeRD work embeddings for the similarity calculations (xlm_roberta_base.parquet).
 
@@ -132,6 +138,7 @@ By default, the target distribution creates five conditions:
 * Step 3B-3 (pick random walk from folder: **experiment_scripts**): Prepare and run the experiment scripts (one for each model), where you can specify the details for running the specific model (we provide a sample script with all the parameters used in our experiment for random walks.
 
 ### Part C- Running Filtering Algorithms
+
 Please find the relevant files for this step in the folder: **PLD_EPD_preparation**
 
 * Step 3C-1 {**process_party_data_{datasetname}.py**}: Run the script with either 'ebnerd' or 'nemig' in the name to compute party classification.
@@ -139,10 +146,12 @@ Please find the relevant files for this step in the folder: **PLD_EPD_preparatio
 * Step 3C-2 (**PLD_train_uir_processing.py**): Run this script to produce the training set uir format for the PLD model.
 
 ### Part D - Creating Random Baseline
+
 Please find the relevant files for this step in the folder: **experiment_scripts/random_ebnerd_small.py**.
-All you need to do is run the random baseline script with the relevant user-item interaction metric and item pool as input. 
+All you need to do is run the random baseline script with the relevant user-item interaction metric and item pool as input.
 
 ## Step 4 - Evaluation Metrics
+
 Please find the relevant file for this step in the folder: **evaluation_scripts**.
 Run the evaluation script for calculating norm-aware diversity (RADio), traditional diversity (Gini, ILD), and AUC.
 (Please note that there is no separate script for energy cost.
@@ -161,12 +170,32 @@ The two scripts provided here will encode the party and sentiment of articles in
 There is no vector for category; it is just a list of different categories.
 (The category information is in the article dataset, where you can map the article raw ID to the category for every item in the article pool.)
 * RADio Representation (**party_binary.py**): We used the binary mention of party in each article.
-I.e., if an article is mentioned multiple times, it is only counted as once. 
+I.e., if an article is mentioned multiple times, it is only counted as once.
 For articles without party mentions, there is a special entry {"No party":1} generated by a dedicated script (party_binary.py).
 
+<!--
+## Step 5 - Online Deployment
+
+Steps 1-4 outline an pipeline for offline benchmarking.
+To turn this into a production-ready system for running user studies, the following three steps are necessary.
+
+### Part A - Database Connection
+
+...
+
+### Part B - User Feedback
+
+...
+
+### Part C - Item Visualization
+
+...
+-->
+
 ## Resources
-**Experiments Repository**: https://github.com/Informfully/Experiments (experiment configuration files, this repository).
 
-**Recommenders Repository**: https://github.com/Informfully/Recommenders) (extended Cornac framework, part of our submission).
+* [Experiments Repository](https://github.com/Informfully/Experiments) (recommender tutorial, this folder)
 
-**Cornac Framework**: https://github.com/PreferredAI/cornac (resource for tutorials).
+* [Recommenders Repository](https://github.com/Informfully/Recommenders) (extended recommendation framework)
+
+* [Cornac Framework](https://github.com/PreferredAI/cornac) (official Cornac website with more tutorials)

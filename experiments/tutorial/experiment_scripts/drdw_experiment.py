@@ -6,7 +6,6 @@ import json
 import random
 import sys
 
-
 from cornac.data import Reader
 from cornac.eval_methods import BaseMethod
 from cornac.experiment.experiment import Experiment
@@ -33,7 +32,6 @@ def main():
 
     test_uir_path = os.path.join(input_path, 'uir_impression_test.csv')
     feedback_test = mind.load_feedback(fpath=test_uir_path)
-    
     
     article_pool_path = os.path.join(input_path, "article_pool.csv")
     impression_items_df = pd.read_csv(article_pool_path, dtype ={'iid': str})
@@ -135,7 +133,6 @@ def main():
             ]}
         }
 
-
     # Prepare article feature DataFrame for reranking
     article_feature_dataframe = (
         pd.Series(Item_category).to_frame('category')
@@ -145,7 +142,7 @@ def main():
 
     # Set up the D-RDW model
     ## for Nemig, maxHops = 5 has better result
-    ## for Eb_Nerd and Mind,  maxHops = 3
+    ## for EB_NeRD and MIND,  maxHops = 3
     ## Other parameters are the same. 
     model = D_RDW(
         item_dataframe = article_feature_dataframe,
@@ -164,7 +161,6 @@ def main():
     # Define metrics
     targetSize = 20
     metrics = [Recall(k=targetSize)]
-
 
     experiment_output_path = f'./experiment_{dataset_name}_results'
     # Set up the experiment

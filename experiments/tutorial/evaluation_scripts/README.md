@@ -11,13 +11,12 @@ We use **AUC** and **pairwise comparison** based on impression logs:
 
 - For each test impression, if the **a clicked article's score** is higher than **an unclicked articles**, it is counted as a **correct pair**.
 
-
-
 ## Diversity Evaluation
 
 Diversity is measured using the **Top-20 recommendation list** per user.
 
 ### Step 1: Generate Top-20 Lists
+
 For recommendation models that generate a candidate list, this step is required to have a top20 list. For Models like D-RDW that directly generate a recommendation list at target size, this step is not needed.
 
 This script filters out:
@@ -52,9 +51,6 @@ def sentiment_to_one_hot(score):
 
 > * For **Mind** and **EB-NERD**, we use a **4D sentiment vector** (see `generate_senti_one_hot.py`).
 
-
-
-
 ## Party One-Hot Encoding
 The provided script processes EB_NERD dataset.
 
@@ -71,7 +67,7 @@ opp_parties = {
 }
 ```
 
-For Mind Dataset, 
+For MIND, 
 
 ```python
 DEM = "democratic party"
@@ -97,15 +93,12 @@ def party_to_one_hot(mentions):
     return [0, 0, 0, 0, 1]
 ```
 
-
-
 ## RADio Metrics
 
 ### Setup
 
 * The **article pool** (from train + test sets) is saved in a `.csv` file.
 * **User history** is generated during data preparation.
-
 
 ## For Representation Metric
 
