@@ -34,6 +34,20 @@ If you use any code or data from this repository in a scientific publication, we
   }
   ```
 
+<!--
+- [D-RDW: Diversity-Driven Random Walks for News Recommender Systems](TBD), Li *et al.*, Proceedings of the 19th ACM Conference on Recommender Systems, 2025.
+
+  ```
+  @inproceedings{li2025diversity,
+    title={D-RDW: Diversity-Driven Random Walks for News Recommender Systems},
+    author={Li, Runze and Heitz, Lucien and Inel, Oana and Bernstein, Abraham},
+    booktitle={Proceedings of the 19th ACM Conference on Recommender Systems},
+    pages={TBD},
+    year={2025}
+  }
+  ```
+-->
+
 ## Contributing
 
 You are welcome to contribute to the Informfully ecosystem and become a part of our community.
