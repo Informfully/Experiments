@@ -9,14 +9,18 @@ Informfully is an open-source reproducibility platform for content distribution 
 
 ## Overview
 
-This repository contains all the experiment configuration files to reproduce the findings of our papers and research that use the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
-For an overview of how to install the codebase and how to run the experiment workflows shared here, please follow the [Online Tutorial](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial).
+This repository contains all the experiment configuration files and hyperparameters to reproduce the findings of our papers and research that use the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
+For an overview of how to run the experiment workflows shared here, please follow go through the tutorial below.
+The tutorial includes a step-by-step instructions to download the codebase necessary for running all the models listed here.
 
-| Experiment | Tutorial | Resources |
+| Experiment | Documentation | Resources |
 |-|-|-|
-| Sample Files for Informfully Recommenders | [Readme](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial) | N/A |
-| ACM RecSys '24 Challenge | [Readme](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_challenge_2024) | [Paper](https://dl.acm.org/doi/abs/10.1145/3687151.3687155), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta) |
-<!-- | Name | [Folder](TBD) | [Paper](TBD) | -->
+| Informfully Recommenders Tutorial (forthcoming) | [README](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial) | [Codebase](https://github.com/Informfully/Recommenders) |
+| [ACM RecSys '23 Paper](https://dl.acm.org/doi/abs/10.1145/3604915.3608834) | [README](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_paper_2023) | [Parameters](TBD), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd) |
+| [ACM RecSys '24 Challenge](https://dl.acm.org/doi/abs/10.1145/3687151.3687155) | [README](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_challenge_2024) | [Parameters](TBD), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta) |
+| ACM RecSys '25 Paper (forthcoming) | [README](https://github.com/Informfully/Experiments/blob/main/experiments/tutorial/experiment_scripts/README.md) | [Parameters](https://github.com/Informfully/Experiments/blob/main/experiments/tutorial/experiment_scripts/drdw_experiment.py), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/drdw) |
+<!-- | [Digital Journalism Paper](https://www.tandfonline.com/doi/full/10.1080/21670811.2021.2021804) | [README](TBD) | [Parameters](TBD),[Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/pld) | -->
+<!-- | [Journal of Communication Paper](TBD) | [README](TBD) | [Parameters](TBD),[Model](TBD) | -->
 
 ## Citation
 
@@ -34,27 +38,14 @@ If you use any code or data from this repository in a scientific publication, we
   }
   ```
 
-<!--
-- [D-RDW: Diversity-Driven Random Walks for News Recommender Systems](TBD), Li *et al.*, Proceedings of the 19th ACM Conference on Recommender Systems, 2025.
-
-  ```
-  @inproceedings{li2025diversity,
-    title={D-RDW: Diversity-Driven Random Walks for News Recommender Systems},
-    author={Li, Runze and Heitz, Lucien and Inel, Oana and Bernstein, Abraham},
-    booktitle={Proceedings of the 19th ACM Conference on Recommender Systems},
-    pages={TBD},
-    year={2025}
-  }
-  ```
--->
-
 ## Contributing
 
 You are welcome to contribute to the Informfully ecosystem and become a part of our community.
 Feel free to:
-* Fork any of the [Informfully repositories](https://github.com/Informfully/Documentation).
-* Suggest new features in [Future Release](https://github.com/orgs/Informfully/projects/1).
-* Make changes and create pull requests.
+
+- Fork any of the [Informfully repositories](https://github.com/Informfully/Documentation).
+- Suggest new features in [Future Release](https://github.com/orgs/Informfully/projects/1).
+- Make changes and create pull requests.
 
 Please post your feature requests and bug reports in our [GitHub issues](https://github.com/Informfully/Documentation/issues) section.
 

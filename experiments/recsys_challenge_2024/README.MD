@@ -6,8 +6,7 @@ As we are unable to redistribute any of the challenge datasets, please go and do
 ## Overview
 
 This submission uses RP3 Beta random walks from the [Recommenders Repository](https://github.com/Informfully/Recommenders).
-To calculate the article ranking shared in the prediction folder, please run the script `sample.py` located in the [Recommender Algorithm Folder](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta) folder.
-(More detailes instructions are available in the [Recommenders Tutorial](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial).)
+To calculate the article ranking shared in the prediction folder, please run the script `sample.py` located in the [Recommender Algorithm Folder](TBD) folder.
 We structure the input data to match the following format (please see the augmentation script and notebook shared in this folder for details):
 
 ```python
