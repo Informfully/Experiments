@@ -9,19 +9,19 @@ Informfully is an open-source reproducibility platform for content distribution 
 
 ## Overview
 
-This repository contains all the experiment scripts (including configuration files and hyperparameters) to reproduce the findings of our papers and research that use the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
+This repository contains all the experiment scripts (configuration files and hyperparameters) to reproduce the findings of our papers and research that use the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
 For an overview of how to run the experiment workflows shared here, please follow go through the tutorial below.
 The tutorial includes a step-by-step instructions to download the codebase necessary for running all the models listed here.
 
-| Experiment | Documentation | Resources |
-|-|-|-|
-| Informfully Recommenders Tutorial (forthcoming) | [README](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial) | [Codebase](https://github.com/Informfully/Recommenders) |
-| [Deliberative Diversity for News Recommendations (RecSys '23)](https://dl.acm.org/doi/abs/10.1145/3604915.3608834) | [README](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_paper_2023) | [Scripts](https://github.com/Informfully/Experiments/blob/main/experiments/recsys_paper_2023/main.py), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd) |
-| [Random Walks for Diverse News Recommendations (RecSys '24 Challenge)](https://dl.acm.org/doi/abs/10.1145/3687151.3687155) | [README](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_challenge_2024) | [Scripts](https://github.com/Informfully/Experiments/blob/main/experiments/recsys_challenge_2024/randomwalks/sample.py), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta) |
-| [Position and Accessibility Nudges for Environmental News (NORMalize '24)](TBD) | [README](TBD) | [Scripts](TBD), [Dataset](https://github.com/Informfully/Datasets/tree/main/IDEA) |
-| Diversity-Driven Random Walks (forthcoming) | [README](https://github.com/Informfully/Experiments/blob/main/experiments/tutorial/experiment_scripts/README.md) | [Scripts](https://github.com/Informfully/Experiments/blob/main/experiments/tutorial/experiment_scripts/drdw_experiment.py), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/drdw) |
-<!-- | [Digital Journalism Paper](https://www.tandfonline.com/doi/full/10.1080/21670811.2021.2021804) | [README](TBD) | [Parameters](TBD),[Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/pld) | -->
-<!-- | [Journal of Communication Paper](TBD) | [README](TBD) | [Parameters](TBD),[Model](TBD) | -->
+| Experiment | Resources |
+|-|-|
+| Informfully Recommenders Tutorial (forthcoming) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial), [Codebase](https://github.com/Informfully/Recommenders) |
+| [Deliberative Diversity for News Recommendations (RecSys '23)](https://dl.acm.org/doi/abs/10.1145/3604915.3608834) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_paper_2023), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd) |
+| [Random Walks for Diverse News Recommendations (RecSys '24 Challenge)](https://dl.acm.org/doi/abs/10.1145/3687151.3687155) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_challenge_2024), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta) |
+| [Position and Accessibility Nudges for Environmental News (NORMalize '24)](https://ceur-ws.org/Vol-3898/paper1.pdf) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/normalize_paper_2024), [Dataset](https://github.com/Informfully/Datasets/tree/main/IDEA) |
+| Diversity-Driven Random Walks (forthcoming) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial/experiment_scripts), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/drdw) |
+<!-- | [Digital Journalism Paper](https://www.tandfonline.com/doi/full/10.1080/21670811.2021.2021804) | [Scripts](TBD),[Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/pld) | -->
+<!-- | [Journal of Communication Paper](TBD) | [Scripts](TBD),[Model](TBD) | -->
 
 ## Contributing
 
