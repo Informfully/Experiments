@@ -9,7 +9,7 @@ If you use any code or data from this repository in a scientific publication, we
 
 - [Informfully - Research Platform for Reproducible User Studies](https://dl.acm.org/doi/10.1145/3640457.3688066), Heitz *et al.*, Proceedings of the 18th ACM Conference on Recommender Systems, 2024.
 
-  ```
+  ```tex
   @inproceedings{heitz2024informfully,
     title={Informfully - Research Platform for Reproducible User Studies},
     author={Heitz, Lucien and Croci, Julian A and Sachdeva, Madhav and Bernstein, Abraham},
@@ -21,7 +21,7 @@ If you use any code or data from this repository in a scientific publication, we
 
 - [Deliberative Diversity for News Recommendations - Operationalization and Experimental User Study](https://dl.acm.org/doi/10.1145/3604915.3608834), Heitz *et al.*, Proceedings of the 17th ACM Conference on Recommender Systems, 813–819, 2023.
 
-  ```
+  ```tex
   @inproceedings{heitz2023deliberative,
     title={Deliberative Diversity for News Recommendations: Operationalization and Experimental User Study},
     author={Heitz, Lucien and Lischka, Juliane A and Abdullah, Rana and Laugwitz, Laura and Meyer, Hendrik and Bernstein, Abraham},

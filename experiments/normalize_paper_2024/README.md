@@ -7,7 +7,7 @@ If you use any code or data from this repository in a scientific publication, we
 
 - [IDEA – Informfully Dataset with Enhanced Attributes](https://ceur-ws.org/Vol-3898/paper1.pdf), Heitz *et al.*, Proceedings of the Second Workshop on the Normative Design and Evaluation of Recommender Systems, 2024.
 
-  ```
+  ```tex
   @inproceedings{heitz2024idea,
     title={IDEA – Informfully Dataset with Enhanced Attributes},
     author={Heitz, Lucien and Mattis, Nicolas and Inel, Oana and van Atteveldt, Wouter},
@@ -18,7 +18,7 @@ If you use any code or data from this repository in a scientific publication, we
 
 - [Informfully - Research Platform for Reproducible User Studies](https://dl.acm.org/doi/10.1145/3640457.3688066), Heitz *et al.*, Proceedings of the 18th ACM Conference on Recommender Systems, 2024.
 
-  ```
+  ```tex
   @inproceedings{heitz2024informfully,
     title={Informfully - Research Platform for Reproducible User Studies},
     author={Heitz, Lucien and Croci, Julian A and Sachdeva, Madhav and Bernstein, Abraham},

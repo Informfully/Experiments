@@ -33,7 +33,7 @@ If you use any code or data of this repository in a scientific publication, we a
 
 - [Recommendations for the Recommenders: Reflections on Prioritizing Diversity in the RecSys Challenge](https://dl.acm.org/doi/abs/10.1145/3687151.3687155), Heitz *et al.*, Proceedings of the Recommender Systems Challenge 2024, 2024.
 
-  ```
+  ```tex
   @inproceedings{heitz2024recommendations,
     title={Recommendations for the Recommenders: Reflections on Prioritizing Diversity in the RecSys Challenge},
     author={Heitz, Lucien and Inel, Oana and Vrijenhoek, Sanne},
@@ -45,7 +45,7 @@ If you use any code or data of this repository in a scientific publication, we a
 
 - [Updatable, Accurate, Diverse, and Scalable Recommendations for Interactive Applications](https://dl.acm.org/doi/abs/10.1145/2955101), Paudel *et al.*, ACM Transactions on Interactive Intelligent Systems, 2016.
 
-  ```
+  ```tex
   @article{paudel2016updatable,
     title={Updatable, accurate, diverse, and scalable recommendations for interactive applications},
     author={Paudel, Bibek and Christoffel, Fabian and Newell, Chris and Bernstein, Abraham},
