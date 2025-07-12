@@ -11,12 +11,13 @@ from cornac.datasets import mind as mind
 from cornac.rerankers import GreedyKLReranker, PM2Reranker, MMR_ReRanker, DynamicAttrReRanker
 from cornac.experiment.pipelineExperiment import PipelineExperiment
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "6"
+
 
 # Load data and set up environment
 def main():
 
-    experiment_config_file = './configs/npa_pipeline.ini'
-    
+    experiment_config_file = './configs/lstur_pipeline.ini'
     dataset_name = 'nemig'
     
     input_path = f'./{dataset_name}_results'
@@ -45,9 +46,7 @@ def main():
         exclude_unknowns = False,
         verbose = True,
         rating_threshold = 0.5
-    )
-
-  
+    )  
 
     # Load article attributes
     data_enrichment_path = input_path

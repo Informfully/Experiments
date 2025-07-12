@@ -11,12 +11,15 @@ from cornac.datasets import mind as mind
 from cornac.rerankers import GreedyKLReranker, PM2Reranker, MMR_ReRanker, DynamicAttrReRanker
 from cornac.experiment.pipelineExperiment import PipelineExperiment
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "6"
+
 
 # Load data and set up environment
 def main():
 
     experiment_config_file = './configs/npa_pipeline.ini'
     dataset_name = 'nemig'
+
     input_path = f'./{dataset_name}_results'
     # Update the path for different dataset.
     # input_path = './mind_results'

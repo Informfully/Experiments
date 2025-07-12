@@ -3,19 +3,21 @@ import numpy as np
 import pandas as pd
 import pickle
 import os
+from cornac.data import Reader
 from cornac.eval_methods import BaseMethod
 from cornac.models import Recommender
 from cornac.metrics import  Recall
 from cornac.datasets import mind as mind
-from cornac.rerankers import GreedyKLReranker,PM2Reranker, MMR_ReRanker, DynamicAttrReRanker
+from cornac.rerankers import GreedyKLReranker, PM2Reranker, MMR_ReRanker, DynamicAttrReRanker
 from cornac.experiment.pipelineExperiment import PipelineExperiment
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "6"
 
+
 # Load data and set up environment
 def main():
 
-    experiment_config_file = './configs/npa_pipeline.ini'
+    experiment_config_file = './configs/nrms_pipeline.ini'
     dataset_name = 'nemig'
     
     input_path = f'./{dataset_name}_results'
@@ -36,7 +38,6 @@ def main():
     user_history_path = os.path.join(input_path, 'combined_user_history.json')
     with open(user_history_path, 'r') as file:
         user_item_history = json.load(file)
-
 
     # Split data
     ratio_split = BaseMethod.from_splits(
