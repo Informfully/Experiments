@@ -19,7 +19,7 @@ The tutorial includes a step-by-step instructions to download the codebase neces
 | [Deliberative Diversity for News Recommendations (RecSys '23)](https://dl.acm.org/doi/abs/10.1145/3604915.3608834) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_paper_2023), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd) |
 | [Random Walks for Diverse News Recommendations (RecSys '24 Challenge)](https://dl.acm.org/doi/abs/10.1145/3687151.3687155) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_challenge_2024), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta) |
 | [Position and Accessibility Nudges for Environmental News (NORMalize '24)](https://ceur-ws.org/Vol-3898/paper1.pdf) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/normalize_paper_2024), [Dataset](https://github.com/Informfully/Datasets/tree/main/IDEA) |
-| Diversity-Driven Random Walks (forthcoming) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial/experiment_scripts), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/drdw) |
+| Diversity-Driven Random Walks (forthcoming) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_paper_2025), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/drdw) |
 <!-- | [Digital Journalism Paper](https://www.tandfonline.com/doi/full/10.1080/21670811.2021.2021804) | [Scripts](TBD),[Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/pld) | -->
 <!-- | [Journal of Communication Paper](TBD) | [Scripts](TBD),[Model](TBD) | -->
 
