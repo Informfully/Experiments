@@ -1,4 +1,4 @@
-# Preparation for Graph-Based Models (D-RDW, RP3-beta, RWE-D)
+# Preparation for Graph-Based Models (D-RDW, RP3-Beta, RWE-D)
  
 This folder contains data preparation scripts for graph-based recommendation models such as **D-RDW**, **Rp3beta**, and **RWE-D**.
 
@@ -32,8 +32,8 @@ To incorporate unknown items into the graph, we:
 
 3. Generate article embeddings by running the appropriate script:
 
-   * `article_embedding_mind.py` for Mind dataset
-   * `article_embedding_nemig.py` for NeMig dataset
+   - `article_embedding_mind.py` for Mind dataset
+   - `article_embedding_nemig.py` for NeMig dataset
 
 4. After embedding generation, proceed with graph augmentation using the prepared embeddings.
 Execute `generate_uir_augmentation_top3_combined_his.py`.
@@ -42,14 +42,14 @@ Execute `generate_uir_augmentation_top3_combined_his.py`.
 
 Before running the script, ensure the following files are prepared:
 
-* `uir_impression_train.csv` — user–item–rating interactions from the training set impression logs.
-* `uir_impression_test.csv` — user–item–rating interactions from the test set impression logs.
-* `combined_user_history.json` — browsing history per user
+- `uir_impression_train.csv` — user–item–rating interactions from the training set impression logs.
+- `uir_impression_test.csv` — user–item–rating interactions from the test set impression logs.
+- `combined_user_history.json` — browsing history per user
 
 Refer to `neural_preparation/README.md` for instructions on how to generate these files.
 
-* The script augments each user–item interaction with additional interactions from the **Top-N most similar items** based on the pretrained embeddings.
-* You can adjust the value of **TopN** within the script.
+- The script augments each user–item interaction with additional interactions from the **Top-N most similar items** based on the pretrained embeddings.
+- You can adjust the value of **TopN** within the script.
   In our experiments, we use:
 
   ```python
@@ -58,6 +58,4 @@ Refer to `neural_preparation/README.md` for instructions on how to generate thes
 
 #### Output
 
-The script generates:
-
-* `augmented_uir_top{TopN}similar.csv` (augmented user–item interaction file with added interactions from similar items.)
+The script generates `augmented_uir_top{TopN}similar.csv` (augmented user–item interaction file with added interactions from similar items.)
