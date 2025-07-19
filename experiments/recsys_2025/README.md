@@ -49,24 +49,24 @@ Please find the relevant files for this step in the folder: **article_enrichment
 * Step 2-1 (**article_enrichment_scripts/data_cleaning.py**): Data cleaning/removal of invalid items (i.e., items with empty or invalid date stamps).
 Please make sure to install **pandas** and **pyarrow** (for reading and writing **.parquet** files) before continuing this tutorial.
 Two main actions are performed:
-   * a) For each article, we combined the title and the subtitle/lead to make a longer article input title to train the neural model.
-   * b) We then check if we have a complete data entry for the article entry.
-   This includes the following attributes: published_time, body, title, category_str, and article_id.
-   If any columns are empty or null, we add the article ID to **incomplete_ids**.
-   This flags them for removal.
-   * c) We then cleaned the article data, where all articles in **incomplete_ids** are removed from the item pool.
-   This results in a clean data collection that is then converted to a CSV.
-   The CSV file contains the following attributes: article_id, title, body, published_date, and category. 
-   This file serves as the input for the next step, the data enrichment.
-   Upon successful completion, the output of **data_cleaning.py** creates the following files: incomplete_article_ids.txt (the removed items) and cleaned_articles.csv (for article enrichment).
+  * a) For each article, we combined the title and the subtitle/lead to make a longer article input title to train the neural model.
+  * b) We then check if we have a complete data entry for the article entry.
+  This includes the following attributes: published_time, body, title, category_str, and article_id.
+  If any columns are empty or null, we add the article ID to **incomplete_ids**.
+  This flags them for removal.
+  * c) We then cleaned the article data, where all articles in **incomplete_ids** are removed from the item pool.
+  This results in a clean data collection that is then converted to a CSV.
+  The CSV file contains the following attributes: article_id, title, body, published_date, and category.
+  This file serves as the input for the next step, the data enrichment.
+  Upon successful completion, the output of **data_cleaning.py** creates the following files: incomplete_article_ids.txt (the removed items) and cleaned_articles.csv (for article enrichment).
 
 * Step 2-2 (**article_enrichment_scripts/article_enrich.py**): Run the augmentation scripts for sentiment, category, political entities, and story enrichments.
-   * a) Before running **article_enrich.py**, you need to change the **config.py**.
-    Everything can stay the same as in our example.
-    However, you might want to change the path for the input file: **input_file_path** (the full path of the previously mentioned CSV **cleaned_articles.csv**) and **output_file_path** (your path to store the enriched JSON files).
-    Please note that running the enrichment script requires an active internet connection, as it uses Wikidata for the enrichment process.
-   * b) Upon successful completion, you will find the enriched JSON files in the path specified in **config.py**.
-    This includes: category.json, enriched_named_entities.json, min_maj_ratio.json, named_entities.json, party.json, readability.json, region.json, sentiment.json, story.json.
+  * a) Before running **article_enrich.py**, you need to change the **config.py**.
+  Everything can stay the same as in our example.
+  However, you might want to change the path for the input file: **input_file_path** (the full path of the previously mentioned CSV **cleaned_articles.csv**) and **output_file_path** (your path to store the enriched JSON files).
+  Please note that running the enrichment script requires an active internet connection, as it uses Wikidata for the enrichment process.
+  * b) Upon successful completion, you will find the enriched JSON files in the path specified in **config.py**.
+  This includes: category.json, enriched_named_entities.json, min_maj_ratio.json, named_entities.json, party.json, readability.json, region.json, sentiment.json, story.json.
 
 ## Step 3 - Running Recommenders
 
@@ -79,22 +79,22 @@ Please find the relevant files for this step in the folder: **neural_preparation
 
 * Step 3A-1 (**neural_preparation/combine_train_test_user_history.py**): Extract user history from the EB-NeRD behavior file (this combines the history in the training and test set for each user, because the neural models’ input is limited to only one user history file).
 The following two combination steps exist:
-   * a) For users that are both in the training and validation set: Keep the history of the train **history.parquet** file.
-   (The history in the validation set can be ignored, as it is a copy of the training history.)
-   * b) For users only appear in the validation set: Use the history info from **history.parquet**.
-   (The validation history can be used for training purposes, as the prediction task is tone on the impressions only, and not on any history.)
-
+  * a) For users that are both in the training and validation set: Keep the history of the train **history.parquet** file.
+  (The history in the validation set can be ignored, as it is a copy of the training history.)
+  * b) For users only appear in the validation set: Use the history info from **history.parquet**.
+  (The validation history can be used for training purposes, as the prediction task is tone on the impressions only, and not on any history.)
+  
 * Step 3A-2 (**neural_preparation/generate_uir_test_impression.py** and **neural_preparation/generate_uir_test_impression.py**): Read the impression logs from the EB-NeRD behavior file and convert it to the Cornac internal user-item interaction matrix (using a separate CSV file for training and validation set).
 In doing so, we also remove any users with an empty history.
 Finally, as Cornac requires a user-item interaction matrix, it only accepts one entry for any user-item pair.
 This has the following consequences:
-   * a) The user-item interaction matrix cannot distinguish between an item being from the history vs. the impression list.
-   * b) To have access to both the history and the impression articles, the history is folded into the impression (to make a distinction later on, the original history is provided as an additional parameter to the model).
-   * c) Impressions are combined.
-   (Articles can appear in multiple impressions of users.
-   Once with a read status, once with an unread one.
-   We now combine records for each user-item pair by saying that a user has read an item if there is at least one impression where the item is marked as read.)
-   All data is automatically saved to a CSV containing the relevant impression items for the subsequent models in the user-item interaction format.
+  * a) The user-item interaction matrix cannot distinguish between an item being from the history vs. the impression list.
+  * b) To have access to both the history and the impression articles, the history is folded into the impression (to make a distinction later on, the original history is provided as an additional parameter to the model).
+  * c) Impressions are combined.
+  (Articles can appear in multiple impressions of users.
+  Once with a read status, once with an unread one.
+  We now combine records for each user-item pair by saying that a user has read an item if there is at least one impression where the item is marked as read.)
+  All data is automatically saved to a CSV containing the relevant impression items for the subsequent models in the user-item interaction format.
 
 * Step 3A-3 (**neural_preparation/generate_word_embedding.py**): Preparation of the word embedding file for the neural models.
 This required two inputs: **cleaned_articles.csv** (see Step 2) and the [fastText 300d word vector for Danish](https://fasttext.cc/docs/en/crawl-vectors.html).

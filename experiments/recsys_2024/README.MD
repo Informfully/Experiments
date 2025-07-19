@@ -6,7 +6,7 @@ As we are unable to redistribute any of the challenge datasets, please go and do
 ## Overview
 
 This submission uses RP3 Beta random walks from the [Recommenders Repository](https://github.com/Informfully/Recommenders).
-To calculate the article ranking shared in the prediction folder, please run the script `sample.py` located in the [Recommender Algorithm Folder](https://github.com/Informfully/Experiments/blob/main/experiments/recsys_challenge_2024/randomwalks/sample.py) folder.
+To calculate the article ranking shared in the prediction folder, please run the script `sample.py` located in the [Recommender Algorithm Folder](https://github.com/Informfully/Experiments/blob/main/experiments/recsys_2024/randomwalks/sample.py) folder.
 We structure the input data to match the following format (please see the augmentation script and notebook shared in this folder for details):
 
 ```python
