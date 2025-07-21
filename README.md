@@ -15,7 +15,7 @@ The tutorial includes a step-by-step instructions to download the codebase neces
 
 | Experiment | Resources |
 |-|-|
-| [Informfully Recommenders Tutorial](https://github.com/Informfully/Experiments/tree/main/experiments/tutorial) | [Scripts](https://github.com/Informfully/Experiments/blob/main/experiments/recsys_2025/graph_preparation/README.md), [Codebase](https://github.com/Informfully/Recommenders) |
+| Informfully Recommenders Tutorial (Version 2025) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2025), [Codebase](https://github.com/Informfully/Recommenders) |
 | [Deliberative Diversity for News Recommendations (RecSys '23)](https://dl.acm.org/doi/abs/10.1145/3604915.3608834) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2023), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd) |
 | [Random Walks for Diverse News Recommendations (RecSys '24)](https://dl.acm.org/doi/abs/10.1145/3687151.3687155) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2024), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta) |
 | [Position and Accessibility Nudges for Environmental News (NORMalize '24)](https://ceur-ws.org/Vol-3898/paper1.pdf) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/normalize_2024), [Dataset](https://github.com/Informfully/Datasets/tree/main/IDEA)|

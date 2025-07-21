@@ -1,4 +1,4 @@
-# Tutorial Workflow
+# Informfully Recommenders Tutorial
 
 This tutorial covers the basic steps for using the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
 Informfully Recommenders is an extension of [Cornac](https://github.com/PreferredAI/cornac).
