@@ -16,7 +16,6 @@ from collections import defaultdict
 from tqdm import tqdm
 
 
-
 save_path = "your_folder_to_save_model_recommendation_results"   #'./experiment_{dataset_name}_drdw_results/{model_name}
 
 file_path = os.path.join(save_path, "item_scores.pkl")  
@@ -30,15 +29,13 @@ input_path = f'./{dataset_name}_results'
 # input_path = './mind_results'
 # input_path = './ebnerd_results'
 
-
 # Read path where you saved article_pool items (raw ids) into a csv file, with a column named iid.
 article_pool_path = os.path.join(input_path, "article_pool.csv")
 impression_items_df = pd.read_csv(article_pool_path, dtype ={'iid': str})
 impression_iid_list = impression_items_df['iid'].tolist()
 
-
 # Read path where the train uir and test uir are saved. For different models, the input files may be different
-## Check the corresponding model experiment script.
+# Check the corresponding model experiment script.
 train_uir_path = os.path.join(input_path, 'uir_impression_train.csv')
 feedback_train = mind.load_feedback(fpath = train_uir_path)
 
@@ -70,7 +67,7 @@ def get_user_rated_items(dataset):
         if r > 0:
             user_rated_items[uid].append(iid)
     
-    # Now, ensure all users are present
+    # Ensure all users are present
     unique_uids = set(uids)
     for uid in unique_uids:
         if uid not in user_rated_items:
