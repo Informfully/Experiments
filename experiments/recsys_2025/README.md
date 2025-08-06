@@ -36,7 +36,7 @@ For a tutorial and installation instructions, we refer to the [official reposito
 Once installed, you can access Cornac as an external library.
 Meaning, you can focus on working exclusively with the files shared in this repository and run them from any folder.
 * Step 1-2: In this tutorial, we use the EB-NeRD dataset, but you can use any other dataset of the same format.*
-Download the EB-NeRD dataset from the [official website](https://recsys.eb.dk/index.html). 
+Download the EB-NeRD dataset from the [official website](https://recsys.eb.dk/index.html).
 You need the following files: **ebnerd_small** (iter-item interactions) and **ebnerd_roberta_base** (article embeddings).
 Due to legal reasons, we cannot share the dataset as part of our codebase.
 
@@ -135,7 +135,8 @@ By default, the target distribution creates five conditions:
 5) no political parties.
 -->
 
-* Step 3B-3 (pick random walk from folder: **experiment_scripts**): Prepare and run the experiment scripts (one for each model), where you can specify the details for running the specific model (we provide a sample script with all the parameters used in our experiment for random walks.
+* Step 3B-3 (pick random walk from folder: **experiment_scripts**): Prepare and run the experiment scripts (one for each model), where you can specify the details for running the specific model.
+We provide a sample script with all the parameters used in our experiment for random walks.
 
 ### Part C- Running Filtering Algorithms
 
