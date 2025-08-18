@@ -1,4 +1,4 @@
-# Informfully Recommenders Tutorial
+# Informfully Recommenders Tutorial (2025)
 
 This tutorial covers the basic steps for using the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
 Informfully Recommenders is an extension of [Cornac](https://github.com/PreferredAI/cornac).
@@ -25,11 +25,11 @@ This repository is organized as follows:
 Please follow the steps outlined below.
 Steps 1-2 are mandatory to execute before running experiments.
 The models shown in Step 3 can be run independently of each other (depending on what models and datasets you want to use).
-Step 4, the evaluation of the recommendaitons, is optional and can be skipped.
+Step 4, the evaluation of the recommendations, is optional and can be skipped.
 
 ## Step 1 - Download and Setup
 
-* Step 1-1: Download our extended Cornac framework calles [Informfully Recommenders](https://github.com/Informfully/Recommenders).
+* Step 1-1: Download our extended Cornac framework called [Informfully Recommenders](https://github.com/Informfully/Recommenders).
 Please see the [Cornac tutorial](https://github.com/PreferredAI/cornac) for instructions in case there are any questions on how to use the framework.
 But **DO NOT** download the original Cornac codebase, as running our code requires additional functionality.
 For a tutorial and installation instructions, we refer to the [official repository](https://github.com/PreferredAI/cornac).
@@ -84,7 +84,7 @@ The following two combination steps exist:
   * b) For users only appear in the validation set: Use the history info from **history.parquet**.
   (The validation history can be used for training purposes, as the prediction task is tone on the impressions only, and not on any history.)
   
-* Step 3A-2 (**neural_preparation/generate_uir_test_impression.py** and **neural_preparation/generate_uir_test_impression.py**): Read the impression logs from the EB-NeRD behavior file and convert it to the Cornac internal user-item interaction matrix (using a separate CSV file for training and validation set).
+* Step 3A-2 (**neural_preparation/generate_uir_test_impression.py** and **neural_preparation/generate_uir_test_impression.py**): Read the impression logs from the EB-NeRD behavior file and convert them to the Cornac internal user-item interaction matrix (using a separate CSV file for training and validation set).
 In doing so, we also remove any users with an empty history.
 Finally, as Cornac requires a user-item interaction matrix, it only accepts one entry for any user-item pair.
 This has the following consequences:
@@ -168,7 +168,7 @@ Apart from limiting the number of recommendations, this script also filters out 
 * Intra-List Distances (**generate_party_one_hot.py** and **generate_senti_one_hot.py**): We need vectors for the calculation of the intra-list distance for recommendations.
 The two scripts provided here will encode the party and sentiment of articles into pre-defined buckets.
 (Both the party and sentiment vectors are required to successfully compute ILD.)
-There is no vector for category; it is just a list of different categories.
+There is no vector for the category; it is just a list of different categories.
 (The category information is in the article dataset, where you can map the article raw ID to the category for every item in the article pool.)
 * RADio Representation (**party_binary.py**): We used the binary mention of party in each article.
 I.e., if an article is mentioned multiple times, it is only counted as once.
