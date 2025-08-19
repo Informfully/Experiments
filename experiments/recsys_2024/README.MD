@@ -11,11 +11,11 @@ We structure the input data to match the following format (please see the augmen
 
 ```python
   # List of articles to populate the graph with article nodes.
-  # The labels can be anything as long as the are unique identifiers.
+  # The labels can be anything as long as they are unique identifiers.
   articleCollection = ["A", "B", "C"]
 
   # List of users to populate the graph with user nodes.
-  # Scores allow to label similar and dissimilar user.
+  # Scores allow for labeling similar and dissimilar users.
   # The closer the score, the more similar the users.
   # However, scoring is disabled in the current submission. 
   # I.e., all users have the same score.
@@ -29,7 +29,7 @@ We structure the input data to match the following format (please see the augmen
 
 ## Citation
 
-If you use any code or data of this repository in a scientific publication, we ask you to cite the following papers:
+If you use any code or data from this repository in a scientific publication, we ask you to cite the following papers:
 
 - [Recommendations for the Recommenders: Reflections on Prioritizing Diversity in the RecSys Challenge](https://dl.acm.org/doi/abs/10.1145/3687151.3687155), Heitz *et al.*, Proceedings of the Recommender Systems Challenge 2024, 2024.
 
