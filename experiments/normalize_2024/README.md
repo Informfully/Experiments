@@ -1,6 +1,6 @@
-# Position and Accessibility Nudges for Environmental News (NORMalize '24)
+# Position and Accessibility Nudges for Environmental News
 
-This repository includes the script for processing the data and creating the simplifies article texts.
+This repository includes the script for processing the data and creating simplified article texts.
 For the data, please see the separate [dataset repository](https://github.com/Informfully/Datasets/tree/main/IDEA/dataset) and the [online documentation](https://github.com/Informfully/Datasets/blob/main/IDEA/Codebook.pdf).
 
 If you use any code or data from this repository in a scientific publication, we ask you to cite the following papers:
