@@ -32,8 +32,8 @@ To incorporate unknown items into the graph, we:
 
 3. Generate article embeddings by running the appropriate script:
 
-   - `article_embedding_mind.py` for Mind dataset
-   - `article_embedding_nemig.py` for NeMig dataset
+   - `article_embedding_mind.py` for MIND
+   - `article_embedding_nemig.py` for NeMig
 
 4. After embedding generation, proceed with graph augmentation using the prepared embeddings.
 Execute `generate_uir_augmentation_top3_combined_his.py`.
