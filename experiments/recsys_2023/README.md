@@ -1,6 +1,6 @@
 # Deliberative Diversity for News Recommendations
 
-When installing .whl files via URL, you might need to first install the wheel package.
+When installing .whl files via URL, you might need to first install the 'wheel' package.
 
 - pip install wheel
 - wheel unpack some-package.whl
