@@ -3,8 +3,11 @@
 This tutorial covers the basic steps for using the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
 Informfully Recommenders is an extension of [Cornac](https://github.com/PreferredAI/cornac).
 Once installed, you can simply load and access the framework like any library/external dependency.
+
 Please see the [Official Guide](https://cornac.readthedocs.io/en/v2.3.0/user/index.html) for installation instructions.
 And see our online documentation for a detailed [System Overview](https://informfully.readthedocs.io/en/latest/recommenders.html).
+
+We share a complete collection of all our recommendations in [final recommendations](./final_recommendations/README.md).
 
 ## Overview
 
