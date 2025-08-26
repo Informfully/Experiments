@@ -15,10 +15,10 @@ The tutorial includes a step-by-step instructions to download the codebase neces
 
 | Experiment | Resources |
 |-|-|
-| Benefits of Diverse News Recommendations for Democracy (DJ '22) | [Paper](https://www.tandfonline.com/doi/full/10.1080/21670811.2021.2021804), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd) |
-| Deliberative Diversity for News Recommendations (RecSys '23) | [Paper](https://dl.acm.org/doi/abs/10.1145/3604915.3608834), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd), [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2023) |
-| Random Walks for Diverse News Recommendations (RecSys '24) | [Paper](https://dl.acm.org/doi/abs/10.1145/3687151.3687155), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta), [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2024) |
-| Position and Accessibility Nudges for Environmental News (NORMalize '24) | [Paper 1](https://doi.org/10.1093/joc/jqaf019), [Paper 2](https://ceur-ws.org/Vol-3898/paper1.pdf), [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/normalize_2024), [Dataset](https://github.com/Informfully/Datasets/tree/main/IDEA)|
+| Benefits of Diverse News Recommendations for Democracy (DJ '22) | [Paper](https://doi.org/10.1080/21670811.2021.2021804), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd) |
+| Deliberative Diversity for News Recommendations (RecSys '23) | [Paper](https://doi.org/10.1145/3604915.3608834), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd), [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2023) |
+| Random Walks for Diverse News Recommendations (RecSys '24) | [Paper](https://doi.org/10.1145/3687151.3687155), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta), [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2024) |
+| Position and Accessibility Nudges for News (JOC '25, NORMalize '24) | [Paper 1](https://doi.org/10.1093/joc/jqaf019), [Paper 2](https://ceur-ws.org/Vol-3898/paper1.pdf), [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/normalize_2024), [Dataset](https://github.com/Informfully/Datasets/tree/main/IDEA)|
 | Diversity-Driven Random Walks (RecSys '25) | [Paper](https://github.com/lucienheitz/lucienheitz/blob/main/papers/li2025drdw.pdf), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/drdw), [Scripts](https://github.com/Informfully/Experiments/blob/main/experiments/recsys_2025/graph_preparation/README.md) |
 
 ## Tutorial
