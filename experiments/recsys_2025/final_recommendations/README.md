@@ -17,9 +17,8 @@ Each recommendation file is structured as follows:
 * [userID_1]: [itemID_A, itemID_B, ...]
 * [userID_2]: [itemID_X, itemID_Y, ...]
 
-The values for each 'userID' and 'itemID' are copied from the underlying dataset (the IDs are from the respective dataset).
 Items are ordered by their prediction score in descending order.
-
+The values for each 'userID' and 'itemID' to the IDs of the original dataset.
 
 ## Collection
 
