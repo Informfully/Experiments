@@ -2,9 +2,15 @@
 
 We share the item recommendations for the following datasets:
 
-* EB-NeRD ([Website](https://recsys.eb.dk))
-* MIND ([Website](https://msnews.github.io), TBD)
-* NeMig ([Website](https://github.com/andreeaiana/nemig))
+* EB-NeRD ([Website](https://recsys.eb.dk), small version used)
+* MIND ([Website](https://msnews.github.io), small version used)
+* NeMig ([Website](https://github.com/andreeaiana/nemig), full version used)
+
+The following pre-processing steps were applied
+
+* Removal of invalid articles/items (i.e., articles without text, such as slideshows or videos/trailers).
+* Removal of invalid article ID from all user histories.
+* Removal of all users with empty history.
 
 Each recommendation file is structured as follows:
 
@@ -13,6 +19,7 @@ Each recommendation file is structured as follows:
 
 The values for each 'userID' and 'itemID' are copied from the underlying dataset (the IDs are from the respective dataset).
 Items are ordered by their prediction score in descending order.
+
 
 ## Collection
 
