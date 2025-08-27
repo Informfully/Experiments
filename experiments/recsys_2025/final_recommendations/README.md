@@ -28,7 +28,7 @@ This folder contains the following two collections
 * Top 20 (shared as part of this repository)
 * Full (requires download from [external server](https://seafile.ifi.uzh.ch/d/fe211ba2fcfd4551aa1a))
 
-'Top 20' includes the top 20 items for each user (i.e., the items with the highest prediction score.)
+'Top 20' includes the top 20 items for each user (i.e., the items with the highest prediction score).
 'Full' contains the complete ranked ordering of **ALL** items in the respective dataset for **ALL** users.
 
 ## Models
@@ -47,7 +47,7 @@ The folders of 'Top 20' and 'Full' contain recommendations from the following al
 
 ## Re-rankers
 
-The folder of 'Top 20' contains re-ranked recommendatoins with the following combination of models and re-rankers:
+The folder of 'Top 20' contains re-ranked recommendations with the following combination of models and re-rankers:
 
 * LSTUR_DYN_ATT (Paper TBD, [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
 * LSTUR_DYN_POS (Paper TBD, [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
