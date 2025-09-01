@@ -35,11 +35,11 @@ This folder contains the following two collections
 The folders of 'Top 20' and 'Full' contain recommendations from the following algorithms:
 
 * DRDW (TBD)
-* EPD ([Paper](https://dl.acm.org/doi/abs/10.1145/3604915.3608834), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd))
+* EPD ([Paper](https://doi.org/10.1145/3604915.3608834), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd))
 * LSTUR ([Paper](https://aclanthology.org/P19-1033), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/lstur))
 * NPA ([Paper](https://dl.acm.org/doi/abs/10.1145/3292500.3330665), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/npa))
 * NRMS ([Paper](https://aclanthology.org/D19-1671), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/nrms))
-* PLD ([Paper](https://www.tandfonline.com/doi/full/10.1080/21670811.2021.2021804), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/pld))
+* PLD ([Paper](https://doi.org/10.1080/21670811.2021.2021804), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/pld))
 * RANDOM
 * RP3B ([Paper](https://dl.acm.org/doi/abs/10.1145/2792838.2800180), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta))
 * RWED ([Paper](https://dl.acm.org/doi/abs/10.1145/3442381.3449970), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rwe_d))
