@@ -34,7 +34,7 @@ This folder contains the following two collections
 
 The folders of 'Top 20' and 'Full' contain recommendations from the following algorithms:
 
-* DRDW (TBD)
+* DRDW ([Paper](https://arxiv.org/abs/2508.13035))
 * EPD ([Paper](https://doi.org/10.1145/3604915.3608834), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/epd))
 * LSTUR ([Paper](https://aclanthology.org/P19-1033), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/lstur))
 * NPA ([Paper](https://dl.acm.org/doi/abs/10.1145/3292500.3330665), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/models/npa))
@@ -48,18 +48,18 @@ The folders of 'Top 20' and 'Full' contain recommendations from the following al
 
 The folder of 'Top 20' contains re-ranked recommendations with the following combination of models and re-rankers:
 
-* LSTUR_DYN_ATT (Paper TBD, [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
-* LSTUR_DYN_POS (Paper TBD, [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
+* LSTUR_DYN_ATT ([Paper](https://arxiv.org/abs/2508.13035), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
+* LSTUR_DYN_POS ([Paper](https://arxiv.org/abs/2508.13035), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
 * LSTUR_GKL ([Paper](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/greedy_kl), [Code](https://github.com/Informfully/Recommenders/blob/main/cornac/metrics/diversity.py))
 * LSTUR_MMR ([Paper](https://dl.acm.org/doi/pdf/10.1145/290941.291025), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/mmr))
 * LSTUR_PM2 ([Paper](https://dl.acm.org/doi/abs/10.1145/2348283.2348296), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/pm2))
-* NPA_DYN_ATT (Paper TBD, [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
-* NPA_DYN_POS (Paper TBD, [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
+* NPA_DYN_ATT ([Paper](https://arxiv.org/abs/2508.13035), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
+* NPA_DYN_POS ([Paper](https://arxiv.org/abs/2508.13035), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
 * NPA_GKL ([Paper](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/greedy_kl), [Code](https://github.com/Informfully/Recommenders/blob/main/cornac/metrics/diversity.py))
 * NPA_MMR ([Paper](https://dl.acm.org/doi/pdf/10.1145/290941.291025), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/mmr))
 * NPA_PM2 ([Paper](https://dl.acm.org/doi/abs/10.1145/2348283.2348296), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/pm2))
-* NRMS_DYN_ATT (Paper TBD, [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
-* NRMS_DYN_POS (Paper TBD, [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
+* NRMS_DYN_ATT ([Paper](https://arxiv.org/abs/2508.13035), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
+* NRMS_DYN_POS ([Paper](https://arxiv.org/abs/2508.13035), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/dynamic_attribute_penalization))
 * NRMS_GKL ([Paper](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/greedy_kl), [Code](https://github.com/Informfully/Recommenders/blob/main/cornac/metrics/diversity.py))
 * NRMS_MMR ([Paper](https://dl.acm.org/doi/pdf/10.1145/290941.291025), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/mmr))
 * NRMS_PM2 ([Paper](https://dl.acm.org/doi/abs/10.1145/2348283.2348296), [Code](https://github.com/Informfully/Recommenders/tree/main/cornac/rerankers/pm2))
