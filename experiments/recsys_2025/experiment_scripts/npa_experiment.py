@@ -20,7 +20,6 @@
 # ============================================================================
 
 import tensorflow as tf
-tf.compat.v1.disable_eager_execution()
 tf.get_logger().setLevel('INFO')
 tf.autograph.set_verbosity(0)
 
