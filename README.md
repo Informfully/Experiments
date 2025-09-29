@@ -31,9 +31,9 @@ To get started, you first need to download the codebase we share in the reposito
 You are welcome to contribute to the Informfully ecosystem and become a part of our community.
 Feel free to:
 
-- Fork any of the [Informfully repositories](https://github.com/Informfully/Documentation).
-- Suggest new features in [Future Release](https://github.com/orgs/Informfully/projects/1).
-- Make changes and create pull requests.
+* Fork any of the [Informfully repositories](https://github.com/Informfully/Documentation).
+* Suggest new features in [Future Release](https://github.com/orgs/Informfully/projects/1).
+* Make changes and create pull requests.
 
 Please post your feature requests and bug reports in our [GitHub issues](https://github.com/Informfully/Documentation/issues) section.
 
