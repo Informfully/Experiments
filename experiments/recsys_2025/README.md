@@ -187,7 +187,7 @@ Tutorial page for [online deployment](https://informfully.readthedocs.io/en/late
 
 ### Part B - Creating Experiment
 
-Tutorial page for [ereating experiments](https://informfully.readthedocs.io/en/latest/overview.html).
+Tutorial page for [creating experiments](https://informfully.readthedocs.io/en/latest/overview.html).
 
 ### Part C - Item Visualization
 
