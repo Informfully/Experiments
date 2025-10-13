@@ -183,7 +183,7 @@ To turn this into a production-ready system for running user studies, the follow
 
 ### Part A - Online Deployment
 
-Tutorial page for [online deployment](https://informfully.readthedocs.io/en/latest/install.html)
+Tutorial page for [online deployment](https://informfully.readthedocs.io/en/latest/install.html).
 
 ### Part B - Creating Experiment
 
@@ -195,8 +195,6 @@ Tutorial page for [iItem visualization](https://informfully.readthedocs.io/en/la
 
 ## Resources
 
-* [Experiments Repository](https://github.com/Informfully/Experiments) (recommender tutorial, this folder)
-
-* [Recommenders Repository](https://github.com/Informfully/Recommenders) (extended recommendation framework)
-
-* [Cornac Framework](https://github.com/PreferredAI/cornac) (official Cornac website with more tutorials)
+* [Experiments Repository](https://github.com/Informfully/Experiments) (recommender tutorial, this folder).
+* [Recommenders Repository](https://github.com/Informfully/Recommenders) (extended recommendation framework).
+* [Cornac Framework](https://github.com/PreferredAI/cornac) (official Cornac website with more tutorials).
