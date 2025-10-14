@@ -5,6 +5,22 @@ For the data, please see the separate [dataset repository](https://github.com/In
 
 If you use any code or data from this repository in a scientific publication, we ask you to cite the following papers:
 
+* [Nudges for News Recommenders](https://doi.org/10.1093/joc/jqaf019), Mattis *et al.*, Journal of Communication, 2025.
+
+  ```tex
+  @article{mattis2025nudges,
+    title={Nudges for News Recommenders: Prominent Article Positioning Increases Selection, Engagement, and Recall of Environmental News, but Reducing Complexity Does Not},
+    author={Mattis, Nicolas and Heitz, Lucien and Masur, Philipp K and Moeller, Judith and van Atteveldt, Wouter},
+    journal={Journal of Communication},
+    volume={},
+    number={},
+    pages={jqaf019},
+    year={2025},
+    publisher={Oxford University Press, UK},
+    url={https://doi.org/10.1093/joc/jqaf019}
+  }
+  ```
+
 - [IDEA – Informfully Dataset with Enhanced Attributes](https://ceur-ws.org/Vol-3898/paper1.pdf), Heitz *et al.*, Proceedings of the Second Workshop on the Normative Design and Evaluation of Recommender Systems, 2024.
 
   ```tex
@@ -27,4 +43,3 @@ If you use any code or data from this repository in a scientific publication, we
     year={2024}
   }
   ```
-  
