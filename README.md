@@ -20,6 +20,7 @@ The tutorial includes step-by-step instructions to download the codebase necessa
 | Random Walks for Diverse News Recommendations (RecSys '24) | [Paper](https://doi.org/10.1145/3687151.3687155), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/rp3_beta), [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2024) |
 | Position and Accessibility Nudges for News (JOC '25, NORMalize '24) | [Paper 1](https://doi.org/10.1093/joc/jqaf019), [Paper 2](https://ceur-ws.org/Vol-3898/paper1.pdf), [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/normalize_2024), [Dataset](https://github.com/Informfully/Datasets/tree/main/IDEA)|
 | Diversity-Driven Random Walks (RecSys '25) | [Paper](https://doi.org/10.1145/3705328.3748016), [Model](https://github.com/Informfully/Recommenders/tree/main/cornac/models/drdw), [Scripts](https://github.com/Informfully/Experiments/blob/main/experiments/recsys_2025/graph_preparation/README.md) |
+| Informfully Recommenders (RecSys '25) | [Paper](https://doi.org/10.1145/3705328.3748148) | [Scripts](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2025) |
 
 ## Tutorial
 
