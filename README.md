@@ -11,7 +11,7 @@ Informfully is an open-source reproducibility platform for content distribution 
 
 This repository contains all the experiment scripts (configuration files and hyperparameters) to reproduce the findings of our papers and research that use the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
 For an overview of how to run the experiment workflows shared here, please go through the tutorial below.
-The tutorial includes step-by-step instructions to download the codebase necessary for running all the models listed here.
+The tutorial includes step-by-step instructions to download the codebase necessary for running all the models and scripts listed here.
 
 | Experiment | Resources |
 |-|-|
