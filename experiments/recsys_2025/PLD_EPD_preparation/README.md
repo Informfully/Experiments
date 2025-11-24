@@ -48,7 +48,7 @@ gov_parties = {
 }
 
 opp_parties = {
-    "Christian Democratic Union", "Christian Social Union of Bavaria","Alternative for Germany", "The Left", "South Schleswig Voters' Association"
+    "Christian Democratic Union", "Christian Social Union of Bavaria", "Alternative for Germany", "The Left", "South Schleswig Voters' Association"
 }
 ```
 
@@ -90,7 +90,7 @@ PLD requires user-item interaction from train impression logs, train user histor
 Therefore, we provide a script for generating it:
 **`PLD_train_uir_processing.py`**
 
-The idea is it incorporates train impression logs, train user history, and test user history.
+The idea is to incorporate train impression logs, train user history, and test user history.
 
 ### Required Files
 
