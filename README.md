@@ -25,7 +25,7 @@ The tutorial includes step-by-step instructions for downloading the codebase nec
 ## Tutorial
 
 Please see the [Informfully Recommenders Tutorial](https://github.com/Informfully/Experiments/tree/main/experiments/recsys_2025) for instructions on how to work with our scripts and recommendation pipelines.
-To get started, you first need to download the codebase we share in the repository of the [Recommender Framework](https://github.com/Informfully/Recommenders).
+To get started, download the codebase from the [Recommender Framework](https://github.com/Informfully/Recommenders) repository.
 
 ## Contributing
 
