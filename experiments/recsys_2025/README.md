@@ -12,7 +12,7 @@ We share a complete collection of all our recommendations in [final recommendati
 ## Overview
 
 In this repository, we share our experiment configuration files.
-We provide a short guide on how to reproduce our results.
+We provide a brief guide to reproducing our results.
 To run and everything shown in our paper, you need (1) experiment configuration files (this folder) and (2) a custom extension of the [Cornac recommender framework](https://github.com/Informfully/Recommenders).
 
 This repository is organized as follows:
@@ -26,14 +26,14 @@ This repository is organized as follows:
 * **PLD_EPD_preparation**: Code to prepare the data and run PLD and EPD algorithms.
 
 Please follow the steps outlined below.
-Steps 1-2 are mandatory to execute before running experiments.
+Steps 1-2 must be completed before running experiments.
 The models shown in Step 3 can be run independently of each other (depending on what models and datasets you want to use).
 Step 4, evaluating the recommendations, is optional and can be skipped.
 
 ## Step 1 - Download and Setup
 
 * Step 1-1: Download our extended Cornac framework called [Informfully Recommenders](https://github.com/Informfully/Recommenders).
-Please refer to the [Cornac tutorial](https://github.com/PreferredAI/cornac) for instructions on how to use the framework, in case you have any questions.
+Please refer to the [Cornac tutorial](https://github.com/PreferredAI/cornac) for instructions on using the framework, in case you have any questions.
 But **DO NOT** download the original Cornac codebase, as running our code requires additional functionality.
 For a tutorial and installation instructions, we refer to the [official repository](https://github.com/PreferredAI/cornac).
 Once installed, you can access Cornac as an external library.
@@ -41,7 +41,7 @@ In other words, you can focus on working exclusively with the files shared in th
 * Step 1-2: In this tutorial, we use the EB-NeRD dataset, but you can use any other dataset of the same format.*
 Download the EB-NeRD dataset from the [official website](https://recsys.eb.dk/index.html).
 You need the following files: **ebnerd_small** (iter-item interactions) and **ebnerd_roberta_base** (article embeddings).
-Due to legal reasons, we cannot share the dataset as part of our codebase.
+For legal reasons, we cannot include the dataset in our codebase.
 
 (*) Datasets of the same format for which we provide additional examples are [MIND](https://msnews.github.io) and [NeMig](https://github.com/andreeaiana/nemig).
 
@@ -58,7 +58,7 @@ Two main actions are performed:
   If any columns are empty or null, we add the article ID to **incomplete_ids**.
   This flags them for removal.
   * c) We then cleaned the article data, where all articles in **incomplete_ids** are removed from the item pool.
-  This results in clean data collection, which is then converted into a CSV.
+  This results in clean data collection, which is then exported to a CSV file.
   The CSV file contains the following attributes: article_id, title, body, published_date, and category.
   This file serves as the input for the next step, the data enrichment.
   Upon successful completion, the output of **data_cleaning.py** creates the following files: incomplete_article_ids.txt (the removed items) and cleaned_articles.csv (for article enrichment).
@@ -67,7 +67,7 @@ Two main actions are performed:
   * a) Before running **article_enrich.py**, you need to change the **config.py**.
   Everything can stay the same as in our example.
   However, you might want to change the path for the input file: **input_file_path** (the full path of the previously mentioned CSV **cleaned_articles.csv**) and **output_file_path** (your path to store the enriched JSON files).
-  Please note that running the enrichment script requires an active internet connection, as it uses Wikidata for the enrichment process.
+  Please note that running the enrichment script requires an active internet connection, as it uses Wikidata for enrichment.
   * b) Upon successful completion, you will find the enriched JSON files in the path specified in **config.py**.
   This includes the following files: category.json, enriched_named_entities.json, min_maj_ratio.json, named_entities.json, party.json, readability.json, region.json, sentiment.json, and story.json.
 
@@ -89,9 +89,9 @@ The following two combination steps exist:
   
 * Step 3A-2 (**neural_preparation/generate_uir_test_impression.py** and **neural_preparation/generate_uir_test_impression.py**): Read the impression logs from the EB-NeRD behavior file and convert them to the Cornac internal user-item interaction matrix (using a separate CSV file for training and validation set).
 In doing so, we also remove any users with an empty history.
-Finally, as Cornac requires a user-item interaction matrix, it only accepts one entry for any user-item pair.
+Finally, because Cornac requires a user-item interaction matrix, it accepts only one entry per user-item pair.
 This has the following consequences:
-  * a) The user-item interaction matrix cannot distinguish between an item being from the history vs. the impression list.
+  * a) The user-item interaction matrix cannot distinguish between an item being in the history vs. the impression list.
   * b) To have access to both the history and the impression articles, the history is folded into the impression (to make a distinction later on, the original history is provided as an additional parameter to the model).
   * c) Impressions are combined.
   (Articles can appear in multiple impressions of users.
@@ -123,7 +123,7 @@ For this detection, two options are available.
 
   1) 'only_mentions' option counts mentions if it detects a subset of the specified party buckets, and no other parties from unspecified buckets in the article.
   For example, the list ['party1', 'party2'] and an article that mentions only 'party1' will match.
-  If the article were to include 'party3', it would not match.
+  If the article included 'party3', it would not match.
   2) 'composition' option counts mentions if it detects a subset for each specified party bucket.
   For example, the list with two buckets [['party1', 'party2'], ['party3', 'party4']] will match an article that contains ['party1', 'party4'].
   It will not match if a party from one of the buckets is absent.
@@ -139,7 +139,7 @@ By default, the target distribution creates five conditions:
 -->
 
 * Step 3B-3 (pick random walk from folder: **experiment_scripts**): Prepare and run the experiment scripts (one for each model), where you can specify the details for running the specific model.
-We provide a sample script with all the parameters used in our experiment for random walks.
+We provide a sample script that includes all the parameters used in our random-walk experiment.
 
 ### Part C- Running Filtering Algorithms
 
@@ -165,8 +165,8 @@ The following conditions apply to running the evaluation:
 
 * RADio, Gini, and ILD are calculated using the top 20 items of the candidate list.
 We provide a separate script that reduces and calculates only the top 20 recommendations (**compute_top20_list.py**).
-This needs to be applied to all neural models and random walk models, except D-RDW (this has a max. recommendation limitation already included).
-Apart from limiting the number of recommendations, this script also filters out recommended items that a user has already added to their history.
+This needs to be applied to all neural and random walk models, except D-RDW (which already has a max. recommendation limitation).
+In addition to limiting the number of recommendations, this script also filters out items that a user has already added to their history.
 * Norm-aware RADio diversity metrics are calculated using **check_diversity_ebnerd/check_radio.py**, traditional diversitc metrics can be fourn in **check_diversity_ebnerd/check_diversity.py**, and AUC is in **compute_auc.py**.
 * Intra-List Distances (**generate_party_one_hot.py** and **generate_senti_one_hot.py**): We need vectors for the calculation of the intra-list distance for recommendations.
 The two scripts provided here will encode the party and sentiment of articles into pre-defined buckets.
