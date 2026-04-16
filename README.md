@@ -1,6 +1,6 @@
 # Informfully Experiments
 
-![Informfully](https://raw.githubusercontent.com/Informfully/Documentation/main/docs/source/img/logo_banner.png)
+![Informfully](https://raw.githubusercontent.com/Informfully/Informfully.github.io/refs/heads/main/docs/img/logo_banner.png)
 
 Welcome to Informfully ([GitHub](https://github.com/orgs/Informfully) & [Website](https://informfully.ch/))!
 Informfully is an open-source reproducibility platform for content distribution and user experiments.
@@ -10,7 +10,7 @@ Informfully is an open-source reproducibility platform for content distribution 
 ## Overview
 
 This repository contains all the experiment scripts (configuration files and hyperparameters) to reproduce the findings of our papers and research that use the [Informfully Recommenders](https://github.com/Informfully/Recommenders).
-For an overview of how to run the experiment workflows shared here, please go through the tutorial below.
+For an overview of how to run the experiment workflows shared here, see the tutorial below.
 The tutorial includes step-by-step instructions for downloading the codebase necessary to run all the models and scripts listed here.
 
 | Experiment | Resources |
